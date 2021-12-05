@@ -1,0 +1,15 @@
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Domain\bin\Debug\net5.0\BeluqaTahir.Domain.deps.json
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Domain\bin\Debug\net5.0\BeluqaTahir.Domain.runtimeconfig.json
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Domain\bin\Debug\net5.0\BeluqaTahir.Domain.runtimeconfig.dev.json
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Domain\bin\Debug\net5.0\BeluqaTahir.Domain.dll
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Domain\bin\Debug\net5.0\ref\BeluqaTahir.Domain.dll
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Domain\bin\Debug\net5.0\BeluqaTahir.Domain.pdb
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Domain\obj\Debug\net5.0\BeluqaTahir.Domain.csprojAssemblyReference.cache
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Domain\obj\Debug\net5.0\BeluqaTahir.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Domain\obj\Debug\net5.0\BeluqaTahir.Domain.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Domain\obj\Debug\net5.0\BeluqaTahir.Domain.AssemblyInfo.cs
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Domain\obj\Debug\net5.0\BeluqaTahir.Domain.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Domain\obj\Debug\net5.0\BeluqaTahir.Domain.dll
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Domain\obj\Debug\net5.0\ref\BeluqaTahir.Domain.dll
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Domain\obj\Debug\net5.0\BeluqaTahir.Domain.pdb
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Domain\obj\Debug\net5.0\BeluqaTahir.Domain.genruntimeconfig.cache

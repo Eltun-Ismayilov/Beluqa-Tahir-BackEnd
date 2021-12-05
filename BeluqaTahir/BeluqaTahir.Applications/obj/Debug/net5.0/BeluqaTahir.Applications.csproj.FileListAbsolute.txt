@@ -1,0 +1,15 @@
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Applications\obj\Debug\net5.0\BeluqaTahir.Applications.csprojAssemblyReference.cache
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Applications\obj\Debug\net5.0\BeluqaTahir.Applications.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Applications\obj\Debug\net5.0\BeluqaTahir.Applications.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Applications\obj\Debug\net5.0\BeluqaTahir.Applications.AssemblyInfo.cs
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Applications\obj\Debug\net5.0\BeluqaTahir.Applications.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Applications\bin\Debug\net5.0\BeluqaTahir.Applications.deps.json
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Applications\bin\Debug\net5.0\BeluqaTahir.Applications.dll
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Applications\bin\Debug\net5.0\ref\BeluqaTahir.Applications.dll
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Applications\bin\Debug\net5.0\BeluqaTahir.Applications.pdb
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Applications\bin\Debug\net5.0\BeluqaTahir.Domain.dll
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Applications\bin\Debug\net5.0\BeluqaTahir.Domain.pdb
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Applications\obj\Debug\net5.0\BeluqaTahir.Applications.csproj.CopyComplete
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Applications\obj\Debug\net5.0\BeluqaTahir.Applications.dll
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Applications\obj\Debug\net5.0\ref\BeluqaTahir.Applications.dll
+C:\Users\User\source\repos\BeluqaTahir\BeluqaTahir.Applications\obj\Debug\net5.0\BeluqaTahir.Applications.pdb

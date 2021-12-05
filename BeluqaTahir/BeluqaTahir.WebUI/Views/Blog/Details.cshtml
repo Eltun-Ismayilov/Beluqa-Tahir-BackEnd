@@ -1,0 +1,310 @@
+﻿@model BlogPost
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="site-navbar-wrap">
+    <div class="site-navbar-top">
+        <div class="container py-3">
+            <div class="row align-items-center">
+                <div class="col-6">
+                    <div class="d-flex mr-auto">
+                        <a href="#" class="d-flex align-items-center mr-4">
+                            <span class="icon-envelope mr-2"></span>
+                            <span class="d-none d-md-inline-block">eltunhi@code.edu.az</span>
+                        </a>
+                        <a href="#" class="d-flex align-items-center mr-auto">
+                            <span class="icon-phone mr-2"></span>
+                            <span class="d-none d-md-inline-block">+994 77 566 31 61</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-6 text-right">
+                    <div class="mr-auto">
+                        <a href="login.html" class="p-2 pl-0"><span>LOG IN</span></a>
+                        <a href="sinup.html" class="p-2 pl-0"><span>SING UP</span></a>
+                        <a href="#" class="p-2 pl-0"><span class="icon-twitter"></span></a>
+                        <a href="#" class="p-2 pl-0"><span class="icon-facebook"></span></a>
+                        <a href="#" class="p-2 pl-0"><span class="icon-linkedin"></span></a>
+                        <a href="#" class="p-2 pl-0"><span class="icon-instagram"></span></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-navbar site-navbar-target js-sticky-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-2">
+                    <h1 class="my-0 site-logo">
+                        <a class="LIQUOR" href="index.html">LIQUOR STORE</a>
+                    </h1>
+                </div>
+                <div class="col-10">
+                    <nav class="site-navigation text-right" role="navigation">
+                        <div class="container">
+                            <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span style="color: chocolate;" class="icon-menu h3"></span></a></div>
+
+                            <ul class="site-menu main-menu js-clone-nav d-none d-lg-block">
+                                <li>
+                                    <a asp-controller="Home" asp-action="Index" class="nav-link">Home</a>
+                                </li>
+                                <li>
+                                    <a asp-controller="Home" asp-action="About" class="nav-link">About</a>
+                                </li>
+
+                                <li>
+                                    <a asp-controller="Shop" asp-action="Index" class="nav-link">Product</a>
+                                </li>
+                                <li class="active">
+                                    <a asp-controller="Blog" asp-action="index" class="nav-link">Blog</a>
+                                </li>
+                                <li>
+                                    <a asp-controller="Home" asp-action="Contact" class="nav-link">Contact</a>
+                                </li>
+                                <li>
+                                    <a href="#contact-section" class="nav-link">
+                                        <span><i class="fas fa-shopping-basket"></i></span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+//Renderbdy
+<div class="hero" style="background-image: url('https://preview.colorlib.com/theme/liquorstore/images/xbg_2.jpg.pagespeed.ic.CNGkvk0ls9.webp');height: 400px;">
+    <div class="textone" data-aos="fade-up">
+        <p style="text-align: center;padding-top: 139px;font-size: 20px;font-weight: 700;">
+            <span>
+                <a href="index.html" style="color: gray;">
+                    HOME
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+            </span>
+            <span>
+                BLOG
+                <i class="fa fa-chevron-right"></i>
+            </span>
+            <span>
+                BLOG SINGLE
+                <i class="fa fa-chevron-right"></i>
+            </span>
+        </p>
+        <h2 style="text-align: center;color:white;font-size: 90px;">Blog Single</h2>
+    </div>
+</div>
+
+
+
+
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-lg-8 blogsingle yeah12 ">
+            <img src="~/assets/images/@Model.ImagePati" alt="">
+            <h2>@Model.Title</h2>
+            <p class="p">
+                @Model.Description
+            </p>
+            <p style="margin-top:-10px" class="p">
+                @Model.ShopDescription
+            </p>
+            <h2 style="margin-top: 50px;">#2. Creative WordPress Themes</h2>
+            <p style="margin-top:-10px" class="p">
+                @Html.Raw(Model.Body)
+            </p>
+            <div class="George">
+                <div class="img">
+                    <img src="~/assets/images/blog-single.jpg" alt="">
+                </div>
+                <div class="img1">
+                    <h3>George Washington</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!
+
+                    </p>
+                </div>
+            </div>
+            <h2 style="margin-top:50px">6 Comments</h2>
+
+            <ul style="margin-top:50px" class="comment-list">
+                <li class="comment">
+                    <div class="vcard bio">
+                        <img src="/assets/images/blog-single.jpg">
+                    </div>
+                    <div class="comment-body">
+                        <h3>John Doe</h3>
+                        <div class="meta">April 12, 2020 at 1:21am</div>
+                        <p class="context1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                        <p>
+                            <a href="#" class="reply">Reply</a>
+                        </p>
+                    </div>
+                </li>
+
+                <li class="comment">
+                    <div class="vcard bio">
+                        <img src="/assets/images/blog-single.jpg">
+                    </div>
+                    <div class="comment-body">
+                        <h3>John Doe</h3>
+                        <div class="meta">April 12, 2020 at 1:21am</div>
+                        <p class="context1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                        <p>
+                            <a href="#" class="reply">Reply</a>
+                        </p>
+                    </div>
+
+                    <ul class="children">
+                        <li style="margin-top: 50px;" class="comment">
+                            <div class="vcard bio">
+                                <img src="/assets/images/blog-single.jpg" alt="Image placeholder">
+                            </div>
+                            <div class="comment-body">
+                                <h3>John Doe</h3>
+                                <div class="meta">April 12, 2020 at 1:21am</div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                                <p><a href="#" class="reply">Reply</a></p>
+                            </div>
+
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="comment">
+                    <div class="vcard bio">
+                        <img src="/assets/images/blog-single.jpg">
+                    </div>
+                    <div class="comment-body">
+                        <h3>John Doe</h3>
+                        <div class="meta">April 12, 2020 at 1:21am</div>
+                        <p class="context1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                        <p>
+                            <a href="#" class="reply">Reply</a>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+
+
+            <div class="comment-form-wrap ">
+                <h3 class="mb-5">Leave a comment</h3>
+                <form action="#" class="p-5 bg-light">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" class="form-control" id="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" class="form-control" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="website">Website</label>
+                        <input type="url" class="form-control" id="website">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea name="" id="message" class="form-control"></textarea>
+                    </div>
+                    <input type="submit" value="Post Comment" class="btn bbn btn-primary">
+
+                </form>
+            </div>
+
+        </div>
+
+
+        <div class="col-lg-4 blogsingle rigth yeah123">
+
+
+            <div class="catagoriyes-drink">
+                <h3>
+                    Services
+                </h3>
+                <li style="margin-top: 50px;">
+                    <a href="">Relation Problem <span class="fa fa-chevron-right"></span></a>
+                </li>
+                <li>
+                    <a href="">Couples Counseling  <span class="fa fa-chevron-right"></span></a>
+                </li>
+                <li>
+                    <a href="">Depression Treatment  <span class="fa fa-chevron-right"></span></a>
+                </li>
+                <li>
+                    <a href="">Family Problem  <span class="fa fa-chevron-right"></span></a>
+                </li>
+                <li>
+                    <a href="">Personal Problem  <span class="fa fa-chevron-right"></span></a>
+                </li>
+                <li>
+                    <a href="">Business Problem  <span class="fa fa-chevron-right"></span></a>
+                </li>
+            </div>
+
+            <h3 class="RecentBlog">Recent Blog</h3>
+
+            <div class="catagoriyes-blog">
+                <div style="display: flex;" class="catagoriyes-blog-image">
+
+                    <div class="catagoriyes-blog-image-img" style="background-image: url(/assets/images/gagasim-4.jpg);"></div>
+
+                    <div class="catagoriyes-blog-image-item">
+                        <p>Even the all-powerful Pointing has no control about the blind texts</p>
+                    </div>
+
+                </div>
+                <div class="meta1">
+                    <div><a href="#"><span class="fa fa-calendar"></span> Apr. 18, 2020</a></div>
+                    <div style="margin-left: 5px;"><a href="#"><span class="fa fa-user"></span> Admin</a></div>
+                    <div style="margin-left: 5px;"><a href="#"><span class="fa fa-comment"></span> 19</a></div>
+                </div>
+            </div>
+            <div class="catagoriyes-blog">
+                <div style="display: flex;" class="catagoriyes-blog-image">
+
+                    <div class="catagoriyes-blog-image-img" style="background-image: url(/assets/images/gagasim-11.jpg);"></div>
+
+                    <div class="catagoriyes-blog-image-item">
+                        <p>Even the all-powerful Pointing has no control about the blind texts</p>
+                    </div>
+
+                </div>
+                <div class="meta1">
+                    <div><a href="#"><span class="fa fa-calendar"></span> Apr. 18, 2020</a></div>
+                    <div style="margin-left: 5px;"><a href="#"><span class="fa fa-user"></span> Admin</a></div>
+                    <div style="margin-left: 5px;"><a href="#"><span class="fa fa-comment"></span> 19</a></div>
+                </div>
+            </div>
+            <div class="catagoriyes-blog">
+                <div style="display: flex;" class="catagoriyes-blog-image">
+
+                    <div class="catagoriyes-blog-image-img" style="background-image: url(/assets/images/gagasim-6.jpg);"></div>
+
+                    <div class="catagoriyes-blog-image-item">
+                        <p>Even the all-powerful Pointing has no control about the blind texts</p>
+                    </div>
+
+                </div>
+                <div class="meta1">
+                    <div><a href="#"><span class="fa fa-calendar"></span> Apr. 18, 2020</a></div>
+                    <div style="margin-left: 5px;"><a href="#"><span class="fa fa-user"></span> Admin</a></div>
+                    <div style="margin-left: 5px;"><a href="#"><span class="fa fa-comment"></span> 19</a></div>
+                </div>
+            </div>
+
+            <h3 class="RecentBlog">Paragraph</h3>
+            <p class="paraqraff">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
+
+
+        </div>
+
+    </div>
+</div>
