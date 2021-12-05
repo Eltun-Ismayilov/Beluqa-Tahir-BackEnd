@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace BeluqaTahir.Applications.ShopMolus
 {
-    class ShopSingleQuery : IRequest<Product>
+   public class ShopSingleQuery : IRequest<Product>
     {
         // bu hisse query model adlanir;(axtaris zamani bura lazim olur)
         public int Id { get; set; }

@@ -24,9 +24,11 @@ namespace BeluqaTahir.WebUI.Controllers
             return View(respons);
         }
 
-        public IActionResult Details()
+        public async Task<IActionResult> Details(ShopSingleQuery query )
         {
-            return View();
+            var respons = await db.Send(query);
+
+            return View(respons);
         }
     }
 }

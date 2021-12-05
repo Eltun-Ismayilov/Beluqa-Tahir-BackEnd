@@ -129,7 +129,7 @@
                                 <div class="detail">
                                     <p class="icon">
                                         <span><i class="far fa-heart"></i></span>
-                                        <span><a style="color: white;" asp-action="Details" class="far fa-share-square"></a></span>
+                                        <span><a style="color: white;" asp-action="Details" asp-route-id="@item.Id" class="far fa-share-square"></a></span>
                                         <span><i class="fas fa-shopping-basket"></i></span>
                                     </p>
                                     <strong>@item.ProductTypes.Name</strong>
