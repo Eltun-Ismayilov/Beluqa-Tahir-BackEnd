@@ -18,6 +18,9 @@ namespace BeluqaTahir.Domain.Model.DataContexts
 
         public DbSet<Contact> contacts { get; set; }
         public DbSet<BlogPost> blogPosts { get; set; }
+        public DbSet<ProductTypes> productTypes { get; set; }
+        public DbSet<Product> products { get; set; }
+
 
 
     }

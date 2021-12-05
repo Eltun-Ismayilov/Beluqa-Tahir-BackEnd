@@ -4,14 +4,16 @@ using BeluqaTahir.Domain.Model.DataContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BeluqaTahir.Domain.Migrations
 {
     [DbContext(typeof(BeluqaTahirDbContext))]
-    partial class BeluqaTahirDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211205164555_InitTriwewer")]
+    partial class InitTriwewer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -135,9 +137,6 @@ namespace BeluqaTahir.Domain.Migrations
                     b.Property<string>("FullName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImagePati")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -154,7 +153,7 @@ namespace BeluqaTahir.Domain.Migrations
 
                     b.HasIndex("ProductTypesId");
 
-                    b.ToTable("products");
+                    b.ToTable("Product");
                 });
 
             modelBuilder.Entity("BeluqaTahir.Domain.Model.Entity.ProductTypes", b =>

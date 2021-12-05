@@ -4,14 +4,16 @@ using BeluqaTahir.Domain.Model.DataContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BeluqaTahir.Domain.Migrations
 {
     [DbContext(typeof(BeluqaTahirDbContext))]
-    partial class BeluqaTahirDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211205153023_InitTriwe")]
+    partial class InitTriwe
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -110,53 +112,6 @@ namespace BeluqaTahir.Domain.Migrations
                     b.ToTable("contacts");
                 });
 
-            modelBuilder.Entity("BeluqaTahir.Domain.Model.Entity.Product", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("CreateByUserId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreateData")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("DeleteByUserId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("DeleteData")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FullName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImagePati")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Price")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ProductTypesId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ShopDescription")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductTypesId");
-
-                    b.ToTable("products");
-                });
-
             modelBuilder.Entity("BeluqaTahir.Domain.Model.Entity.ProductTypes", b =>
                 {
                     b.Property<int>("Id")
@@ -185,22 +140,6 @@ namespace BeluqaTahir.Domain.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("productTypes");
-                });
-
-            modelBuilder.Entity("BeluqaTahir.Domain.Model.Entity.Product", b =>
-                {
-                    b.HasOne("BeluqaTahir.Domain.Model.Entity.ProductTypes", "Icons")
-                        .WithMany("Products")
-                        .HasForeignKey("ProductTypesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Icons");
-                });
-
-            modelBuilder.Entity("BeluqaTahir.Domain.Model.Entity.ProductTypes", b =>
-                {
-                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }

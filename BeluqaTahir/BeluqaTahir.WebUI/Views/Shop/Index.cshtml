@@ -1,4 +1,4 @@
-﻿
+﻿@model ShopViewModel
 @{
     ViewData["Title"] = "Index";
 }
@@ -119,23 +119,29 @@
             <div class="row mt-5 ">
                 <div class="col-md-12 product-field">
                     <ul class="itemsss imagedana">
-                        <li style="width: 250px;margin-left: 10px;margin-top: 20px;" data-category="" data-price="">
-                            <picture>
-                                <img src="./assets/images/rum.jpg" alt="">
-                            </picture>
-                            <div class="detail">
-                                <p class="icon">
-                                    <span><i class="far fa-heart"></i></span>
-                                    <span><a style="color: white;" asp-action="Details" class="far fa-share-square"></a></span>
-                                    <span><i class="fas fa-shopping-basket"></i></span>
-                                </p>
-                                <strong>Rum</strong>
-                                <span>Lorem, ipsum dolor sit amet consectetur.</span>
-                                <small>Buy now</small>
-                            </div>
-                            <h4 style="margin-left: 169px;margin-top: -149px;">$45.78</h4>
-                        </li>
-                        <li style="width: 250px;margin-left: 10px;margin-top: 20px;" data-category="" data-price="">
+
+                        @foreach (var item in Model.Products)
+                        {
+                            <li style="width: 250px;margin-left: 10px;margin-top: 20px;" data-category="" data-price="">
+                                <picture>
+                                    <img src="./assets/images/@item.ImagePati" alt="">
+                                </picture>
+                                <div class="detail">
+                                    <p class="icon">
+                                        <span><i class="far fa-heart"></i></span>
+                                        <span><a style="color: white;" asp-action="Details" class="far fa-share-square"></a></span>
+                                        <span><i class="fas fa-shopping-basket"></i></span>
+                                    </p>
+                                    <strong>@item.ProductTypes.Name</strong>
+                                    <span>@item.Description</span>
+                                    <small>Buy now</small>
+                                </div>
+                                <h4 style="margin-left: 169px;margin-top: -149px;">@item.Price</h4>
+                            </li>
+                        }
+
+
+                        @*<li style="width: 250px;margin-left: 10px;margin-top: 20px;" data-category="" data-price="">
                             <picture>
                                 <img src="./assets/images/rum-1.jpg" alt="">
                             </picture>
@@ -262,7 +268,7 @@
                                 <small>Buy now</small>
                             </div>
                             <h4 style="margin-left: 169px;margin-top: -149px;">$45.78</h4>
-                        </li>
+                        </li>*@
 
 
                     </ul>
@@ -279,43 +285,17 @@
             <div class="categoriesssss">
                 <h3>Product Types</h3>
                 <ul class="indicator">
+                    @foreach (var item in Model.productTypes)
+                    {
+                        <li data-filter="@item.Name">
+                            <span href="#">
+                                @item.Name
+                            </span>
+                        </li>
+                    }
 
-                    <li data-filter="all">
-                        <span href="#">
-                            All
-                        </span>
-                    </li>
 
-                    <li data-filter="Rum">
-                        <span href="#">
-                            Rum
-                        </span>
-                    </li>
-                    <li data-filter="Gin">
-                        <span href="#">
-                            Gin
-                        </span>
-                    </li>
-                    <li data-filter="Brandy">
-                        <span href="#">
-                            Brandy
-                        </span>
-                    </li>
-                    <li data-filter="Vodka">
-                        <span href="#">
-                            Vodka
-                        </span>
-                    </li>
-                    <li data-filter="Whiskey">
-                        <span href="#">
-                            Whiskey
-                        </span>
-                    </li>
-                    <li data-filter="Tequila">
-                        <span href="#">
-                            Tequila
-                        </span>
-                    </li>
+                 
 
                 </ul>
             </div>

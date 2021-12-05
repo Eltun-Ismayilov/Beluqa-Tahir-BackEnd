@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+9nYN3Op0IWFqOGAj3i4UnYVsx0gm5JYCpCcQAqpO5KfU4dWtwG7lvs+7aCYuL4J1LPdgdcLi9PHYxbeir8qlw==",
+  "dgSpecHash": "MManoQSeibHKipWJyiKHKkzu6Vt0IImr2PDZ3mDHDRL+hefVC2juJe1xVZWFnHPxkjU/bMcXJotUXk+RqbwSTw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\source\\repos\\BeluqaTahir\\BeluqaTahir.WebUI\\BeluqaTahir.WebUI.csproj",
+  "projectFilePath": "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.WebUI\\BeluqaTahir.WebUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
