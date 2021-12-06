@@ -1,4 +1,9 @@
 ﻿
+@inject BeluqaTahirDbContext db
+
+@{
+    var person = db.accountdetails.FirstOrDefault(p => p.DeleteByUserId == null);
+}
 <!doctype html>
 <html lang="en">
 <head>
@@ -146,19 +151,19 @@
                         <li>
                             <a href="">
                                 <span class="icon fa fa-map marker"></span>
-                                203 Fake St. Mountain View, San Francisco, California, USA
+                                @person.Address
                             </a>
                         </li>
                         <li>
                             <a href="">
                                 <span class="icon fa fa-phone"></span>
-                                +994-77-566-31-61
+                               @person.Phone
                             </a>
                         </li>
                         <li>
                             <a href="">
                                 <span class="icon fa fa-paper-plane"></span>
-                                eltunhi@code.edu.az
+                               @person.Email
                             </a>
                         </li>
 

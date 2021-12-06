@@ -3,6 +3,12 @@
     ViewData["Title"] = "Index";
 }
 
+@inject BeluqaTahirDbContext db
+
+@{
+    var person = db.accountdetails.FirstOrDefault(p => p.DeleteByUserId == null);
+}
+
 <div class="site-navbar-wrap">
     <div class="site-navbar-top">
         <div class="container py-3">
@@ -11,11 +17,11 @@
                     <div class="d-flex mr-auto">
                         <a href="#" class="d-flex align-items-center mr-4">
                             <span class="icon-envelope mr-2"></span>
-                            <span class="d-none d-md-inline-block">eltunhi@code.edu.az</span>
+                            <span class="d-none d-md-inline-block">@person.Email</span>
                         </a>
                         <a href="#" class="d-flex align-items-center mr-auto">
                             <span class="icon-phone mr-2"></span>
-                            <span class="d-none d-md-inline-block">+994 77 566 31 61</span>
+                            <span class="d-none d-md-inline-block">@person.Phone</span>
                         </a>
                     </div>
                 </div>
@@ -23,10 +29,10 @@
                     <div class="mr-auto">
                         <a href="login.html" class="p-2 pl-0"><span>LOG IN</span></a>
                         <a href="sinup.html" class="p-2 pl-0"><span>SING UP</span></a>
-                        <a href="#" class="p-2 pl-0"><span class="icon-twitter"></span></a>
-                        <a href="#" class="p-2 pl-0"><span class="icon-facebook"></span></a>
-                        <a href="#" class="p-2 pl-0"><span class="icon-linkedin"></span></a>
-                        <a href="#" class="p-2 pl-0"><span class="icon-instagram"></span></a>
+                        <a href="@person.Twwiter" class="p-2 pl-0"><span class="icon-twitter"></span></a>
+                        <a href="@person.Facebook" class="p-2 pl-0"><span class="icon-facebook"></span></a>
+                        <a href="@person.Linkedin" class="p-2 pl-0"><span class="icon-linkedin"></span></a>
+                        <a href="@person.Instagram" class="p-2 pl-0"><span class="icon-instagram"></span></a>
                     </div>
 
                 </div>
@@ -56,13 +62,13 @@
                                 </li>
 
                                 <li>
-                                    <a asp-controller="Shop" asp-action="Index"   class="nav-link">Product</a>
+                                    <a asp-controller="Shop" asp-action="Index" class="nav-link">Product</a>
                                 </li>
                                 <li>
-                                    <a asp-controller="Blog" asp-action="Index"  class="nav-link">Blog</a>
+                                    <a asp-controller="Blog" asp-action="Index" class="nav-link">Blog</a>
                                 </li>
                                 <li>
-                                    <a  asp-controller="Home" asp-action="Contact" class="nav-link">Contact</a>
+                                    <a asp-controller="Home" asp-action="Contact" class="nav-link">Contact</a>
                                 </li>
 
                                 <li>

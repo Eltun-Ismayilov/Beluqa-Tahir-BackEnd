@@ -19,6 +19,105 @@ namespace BeluqaTahir.Domain.Migrations
                 .HasAnnotation("ProductVersion", "5.0.12")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("BeluqaTahir.Domain.Model.Entity.Accountdetails", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("CreateByUserId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateData")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("DeleteByUserId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("DeleteData")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Facebook")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Instagram")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Linkedin")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Twwiter")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("accountdetails");
+                });
+
+            modelBuilder.Entity("BeluqaTahir.Domain.Model.Entity.AuditLog", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Action")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Area")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Controller")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("CreateByUserId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateData")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("DeleteByUserId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("DeleteData")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsHttps")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Method")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Pati")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("QueryString")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RequestTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ResponseTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("StatusCode")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("auditLogs");
+                });
+
             modelBuilder.Entity("BeluqaTahir.Domain.Model.Entity.BlogPost", b =>
                 {
                     b.Property<int>("Id")
@@ -110,6 +209,42 @@ namespace BeluqaTahir.Domain.Migrations
                     b.ToTable("contacts");
                 });
 
+            modelBuilder.Entity("BeluqaTahir.Domain.Model.Entity.HappyClients", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Answer")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("CreateByUserId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateData")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("DeleteByUserId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("DeleteData")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImagePati")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("happyClients");
+                });
+
             modelBuilder.Entity("BeluqaTahir.Domain.Model.Entity.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -189,13 +324,13 @@ namespace BeluqaTahir.Domain.Migrations
 
             modelBuilder.Entity("BeluqaTahir.Domain.Model.Entity.Product", b =>
                 {
-                    b.HasOne("BeluqaTahir.Domain.Model.Entity.ProductTypes", "Icons")
+                    b.HasOne("BeluqaTahir.Domain.Model.Entity.ProductTypes", "ProductTypes")
                         .WithMany("Products")
                         .HasForeignKey("ProductTypesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Icons");
+                    b.Navigation("ProductTypes");
                 });
 
             modelBuilder.Entity("BeluqaTahir.Domain.Model.Entity.ProductTypes", b =>

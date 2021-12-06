@@ -20,8 +20,10 @@ namespace BeluqaTahir.Domain.Model.DataContexts
         public DbSet<BlogPost> blogPosts { get; set; }
         public DbSet<ProductTypes> productTypes { get; set; }
         public DbSet<Product> products { get; set; }
-
-
+        public DbSet<HappyClients> happyClients { get; set; }
+        public DbSet<AuditLog> auditLogs { get; set; }
+        public DbSet<Accountdetails> accountdetails { get; set; }
+        
 
     }
 }

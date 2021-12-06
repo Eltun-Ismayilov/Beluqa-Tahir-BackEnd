@@ -1,4 +1,6 @@
 ﻿
+@model PagedViewModel<HappyClients>
+
 @{
     ViewData["Title"] = "About";
 }
@@ -56,13 +58,13 @@
                                 </li>
 
                                 <li>
-                                    <a  asp-controller="Shop" asp-action="Index"  class="nav-link">Product</a>
+                                    <a asp-controller="Shop" asp-action="Index" class="nav-link">Product</a>
                                 </li>
                                 <li>
-                                    <a asp-controller="Blog" asp-action="Index"  class="nav-link">Blog</a>
+                                    <a asp-controller="Blog" asp-action="Index" class="nav-link">Blog</a>
                                 </li>
                                 <li>
-                                    <a  asp-controller="Home" asp-action="Contact" class="nav-link">Contact</a>
+                                    <a asp-controller="Home" asp-action="Contact" class="nav-link">Contact</a>
                                 </li>
 
                                 <li>
@@ -155,7 +157,7 @@
     <div data-aos="fade-right" class="row mt-5">
         <div style="        background-image: url(https://preview.colorlib.com/theme/liquorstore/images/xbg_2.jpg.pagespeed.ic.CNGkvk0ls9.webp);
         background-size: cover;" class="col-md-6 yeah">
-            
+
         </div>
         <div data-aos="fade-up" class="col-md-6 yeah">
 
@@ -202,46 +204,16 @@
                 </div>
 
                 <div class="items">
-                    <div class="entry">
-                        <p class="name">Ismayilov Eltun</p>
-                        <img class="faking" src=https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto =format%2Ccompress&cs =tinysrgb&dpr =2&h =650&w =940" alt="Smiling person" />
-                        <p class="quote">"Ye ic kayf ele 5 gunluk dunyadi"</p>
-                    </div>
-                    <div class="entry">
-                        <p class="name">Anar Memmedov</p>
-                        <img class="faking" src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Smiling person" />
-                        <p class="quote">"Seninkide yasayis deyil haa.."</p>
-                    </div>
-                    <div class="entry">
-                        <p class="name">Ilham Bagiraz</p>
-                        <img class="faking" src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Smiling person" />
-                        <p class="quote">"Gaga siqaret verde "</p>
-                    </div>
-                    <div class="entry">
-                        <p class="name">Bahman Memmedov</p>
-                        <img class="faking" src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Smiling person" />
-                        <p class="quote">"Gagasim bir canciyer 2 ..."</p>
-                    </div>
-                    <div class="entry">
-                        <p class="name">Qubad Memmedov</p>
-                        <img class="faking" src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Smiling person" />
-                        <p class="quote">"Meni narahat elemiyin (kayfadadi)"</p>
-                    </div>
-                    <div class="entry">
-                        <p class="name">Yusif Bagiraz</p>
-                        <img class="faking" src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Smiling person" />
-                        <p class="quote">"Gaga ana seyfe yazmisam"</p>
-                    </div>
-                    <div class="entry">
-                        <p class="name">Samxal Memmedov</p>
-                        <img class="faking" src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Smiling person" />
-                        <p class="quote">"Gaga bomba seydi ha"</p>
-                    </div>
-                    <div class="entry">
-                        <p class="name">John Doe</p>
-                        <img class="faking" src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Smiling person" />
-                        <p class="quote">"Man, I think this app freaking rocks and stuff. Dude."</p>
-                    </div>
+                    @foreach (var item in Model.Items)
+                    {
+                        <div class="entry">
+                            <p class="name">@item.FullName</p>
+                            <img style="border-radius:0px" class="faking" src="/assets/images/@item.ImagePati" alt="Smiling person" />
+                            <p class="quote">"@item.Answer"</p>
+                        </div>
+                    }
+                  
+
                 </div>
             </div>
         </div>

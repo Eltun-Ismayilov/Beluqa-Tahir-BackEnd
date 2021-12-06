@@ -1,4 +1,5 @@
 ﻿using BeluqaTahir.Applications.ContactModules;
+using BeluqaTahir.Applications.HappyClientss;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -20,9 +21,12 @@ namespace BeluqaTahir.WebUI.Controllers
             return View();
         }
 
-        public IActionResult About()
+        public async Task<IActionResult> About(AboutPagedQuery query)
         {
-            return View();
+
+            var respons = await db.Send(query);
+
+            return View(respons);
         }
 
         [HttpGet]

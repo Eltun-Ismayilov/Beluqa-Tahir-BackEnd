@@ -1,3 +1,4 @@
+using BeluqaTahir.Applications.Core.Infrastructure;
 using BeluqaTahir.Domain.Model.DataContexts;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -58,6 +59,7 @@ namespace BeluqaTahir.WebUI
 
             app.UseRouting();
 
+            app.UseAudit();
 
             app.UseEndpoints(endpoints =>
             {
