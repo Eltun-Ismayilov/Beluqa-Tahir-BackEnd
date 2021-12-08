@@ -1,5 +1,6 @@
 ﻿using BeluqaTahir.Applications.BlogMolus;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace BeluqaTahir.WebUI.Controllers
 {
+
     public class BlogController : Controller
     {
 
@@ -19,6 +21,7 @@ namespace BeluqaTahir.WebUI.Controllers
 
 
         }
+        [AllowAnonymous]
         public async Task<IActionResult> Index(BlogPagedQuery query)
         {
 
@@ -26,7 +29,7 @@ namespace BeluqaTahir.WebUI.Controllers
 
             return View(respons);
         }
-
+        [AllowAnonymous]
         public async Task<IActionResult> Details(BlogSingleQuery query)
         {
 

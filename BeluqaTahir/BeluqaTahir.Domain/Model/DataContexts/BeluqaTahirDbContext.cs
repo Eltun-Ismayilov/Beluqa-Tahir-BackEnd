@@ -1,14 +1,11 @@
 ﻿using BeluqaTahir.Domain.Model.Entity;
+using BeluqaTahir.Domain.Model.Entity.Membership;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BeluqaTahir.Domain.Model.DataContexts
 {
-   public class BeluqaTahirDbContext:DbContext
+    public class BeluqaTahirDbContext : IdentityDbContext<BeluqaUser, BeluqaRole, int, BeluqaUserClaim, BeluqaUserRole, BeluqaUserLogin, BeluqaRoleClaim, BeluqaUserToken>
     {
         public BeluqaTahirDbContext(DbContextOptions options)
             : base(options)
@@ -23,7 +20,51 @@ namespace BeluqaTahir.Domain.Model.DataContexts
         public DbSet<HappyClients> happyClients { get; set; }
         public DbSet<AuditLog> auditLogs { get; set; }
         public DbSet<Accountdetails> accountdetails { get; set; }
-        
+        public DbSet<Subscrice> subscrices { get; set; }
 
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            builder.Entity<BeluqaUser>(e => {
+                // adi   //ADI qabagindaki
+                e.ToTable("Users", "Membership");
+
+            });
+
+            builder.Entity<BeluqaRole>(e => {
+                // adi   //ADI qabagindaki
+                e.ToTable("Roles", "Membership");
+
+            });
+
+            builder.Entity<BeluqaUserRole>(e => {
+                // adi   //ADI qabagindaki
+                e.ToTable("UserRoles", "Membership");
+
+            });
+
+            builder.Entity<BeluqaUserClaim>(e => {
+                // adi   //ADI qabagindaki
+                e.ToTable("UserClaims", "Membership");
+
+            });
+
+            builder.Entity<BeluqaRoleClaim>(e => {
+                // adi   //ADI qabagindaki
+                e.ToTable("RoleClaims", "Membership");
+
+            });
+            builder.Entity<BeluqaUserToken>(e => {
+                // adi   //ADI qabagindaki
+                e.ToTable("UserTokens", "Membership");
+
+            });
+            builder.Entity<BeluqaUserLogin>(e => {
+                // adi   //ADI qabagindaki
+                e.ToTable("UserLogins", "Membership");
+
+            });
+        }
     }
 }

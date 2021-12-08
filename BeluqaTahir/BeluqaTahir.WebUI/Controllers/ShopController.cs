@@ -1,5 +1,6 @@
 ﻿using BeluqaTahir.Applications.ShopMolus;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace BeluqaTahir.WebUI.Controllers
             this.db = db;
 
         }
+        [AllowAnonymous]
         public async Task<IActionResult> Index(ShopList query)
         {
             var respons = await db.Send(query);

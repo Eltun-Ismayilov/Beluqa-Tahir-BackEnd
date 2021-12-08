@@ -22,8 +22,20 @@
                 </div>
                 <div class="col-6 text-right">
                     <div class="mr-auto">
-                        <a href="login.html" class="p-2 pl-0"><span>LOG IN</span></a>
-                        <a href="sinup.html" class="p-2 pl-0"><span>SING UP</span></a>
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+
+
+                            <a asp-controller="Home" asp-action="Signin" class="p-2 pl-0"><span>@User.Identity.Name.ToUpper()</span></a>
+                            <a asp-controller="Home" asp-action="Logout" class="p-2 pl-0"><span>Logout</span></a>
+
+                        }
+                        else
+                        {
+                            <a asp-controller="Home" asp-action="Signin" class="p-2 pl-0"><span>LOG IN</span></a>
+                            <a asp-controller="Home" asp-action="Register" class="p-2 pl-0"><span>SING UP</span></a>
+                        }
                         <a href="#" class="p-2 pl-0"><span class="icon-twitter"></span></a>
                         <a href="#" class="p-2 pl-0"><span class="icon-facebook"></span></a>
                         <a href="#" class="p-2 pl-0"><span class="icon-linkedin"></span></a>
