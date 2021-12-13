@@ -20,13 +20,6 @@ using BeluqaTahir.Domain.Model.FormModels;
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\emin.novruzov\Desktop\xxxxx\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\Areas\Admin\Views\_ViewImports.cshtml"
-using BeluqaTahir.Domain.Model.Entity;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 6 "C:\Users\emin.novruzov\Desktop\xxxxx\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\Areas\Admin\Views\_ViewImports.cshtml"
 using BeluqaTahir.Domain.Model.ViewModels;
 
@@ -40,8 +33,36 @@ using BeluqaTahir.Applications.Core.Extension;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 8 "C:\Users\emin.novruzov\Desktop\xxxxx\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\Areas\Admin\Views\_ViewImports.cshtml"
+using BeluqaTahir.Applications.BlogMolus;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 9 "C:\Users\emin.novruzov\Desktop\xxxxx\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\Areas\Admin\Views\_ViewImports.cshtml"
+using BeluqaTahir.Domain.Model.Entity;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 10 "C:\Users\emin.novruzov\Desktop\xxxxx\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\Areas\Admin\Views\_ViewImports.cshtml"
+using BeluqaTahir.Applications.ProductType;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 11 "C:\Users\emin.novruzov\Desktop\xxxxx\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\Areas\Admin\Views\_ViewImports.cshtml"
+using BeluqaTahir.Applications.Products;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ed42af7b5dce1db89b20bea87ecfb77d1d64b8b3", @"/Areas/Admin/Views/ContactPost/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"58f36da2b6d755f384b50acf0735668def572cd3", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7d88d05a41954ff1ab6b9473418ec29103706357", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_ContactPost_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Contact>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "index", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -117,7 +138,7 @@ using BeluqaTahir.Applications.Core.Extension;
                     <ul class=""text-left mt-2"">
     ");
             WriteLiteral("                    <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed42af7b5dce1db89b20bea87ecfb77d1d64b8b37333", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed42af7b5dce1db89b20bea87ecfb77d1d64b8b38083", async() => {
                 WriteLiteral("<i class=\"ti-user\"></i> <span> <span>Hamsi</span>  <span class=\"round_badge\">");
 #nullable restore
 #line 36 "C:\Users\emin.novruzov\Desktop\xxxxx\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\Areas\Admin\Views\ContactPost\Index.cshtml"
@@ -141,7 +162,7 @@ using BeluqaTahir.Applications.Core.Extension;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\r\n                        <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed42af7b5dce1db89b20bea87ecfb77d1d64b8b39004", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed42af7b5dce1db89b20bea87ecfb77d1d64b8b39754", async() => {
                 WriteLiteral("<i class=\"ti-crown\"></i> <span> <span>Cavab gozleyen</span>  <span class=\"round_badge\">");
 #nullable restore
 #line 37 "C:\Users\emin.novruzov\Desktop\xxxxx\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\Areas\Admin\Views\ContactPost\Index.cshtml"
@@ -169,7 +190,7 @@ using BeluqaTahir.Applications.Core.Extension;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\r\n                        <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed42af7b5dce1db89b20bea87ecfb77d1d64b8b311013", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed42af7b5dce1db89b20bea87ecfb77d1d64b8b311763", async() => {
                 WriteLiteral("<i class=\"ti-announcement\"></i> <span> <span>Cavablandi</span>  <span class=\"round_badge\">");
 #nullable restore
 #line 38 "C:\Users\emin.novruzov\Desktop\xxxxx\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\Areas\Admin\Views\ContactPost\Index.cshtml"
@@ -210,7 +231,7 @@ using BeluqaTahir.Applications.Core.Extension;
                             <div class=""serach_field_2"">
                                 <div class=""search_inner"">
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed42af7b5dce1db89b20bea87ecfb77d1d64b8b313512", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed42af7b5dce1db89b20bea87ecfb77d1d64b8b314262", async() => {
                 WriteLiteral(@"
                                         <div class=""search_field"">
                                             <input type=""text"" placeholder=""Search content here..."">
@@ -379,7 +400,7 @@ WriteAttributeValue("", 4847, item.Name, 4847, 10, false);
             WriteLiteral("\r\n");
             DefineSection("addjs", async() => {
                 WriteLiteral("\r\n\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed42af7b5dce1db89b20bea87ecfb77d1d64b8b322571", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed42af7b5dce1db89b20bea87ecfb77d1d64b8b323321", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

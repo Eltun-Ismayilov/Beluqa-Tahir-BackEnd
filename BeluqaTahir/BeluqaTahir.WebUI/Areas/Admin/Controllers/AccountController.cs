@@ -25,7 +25,6 @@ namespace BeluqaTahir.WebUI.Areas.Admin.Controllers
             this.signInManager = signInManager;
             this.db = db;
         }
-
         [AllowAnonymous]
         public IActionResult Singin()
         {
@@ -33,7 +32,6 @@ namespace BeluqaTahir.WebUI.Areas.Admin.Controllers
         }
         [HttpPost]
         [AllowAnonymous]
-
         public async Task<IActionResult> Singin(LoginFormModel user)
         {
 
@@ -90,7 +88,6 @@ namespace BeluqaTahir.WebUI.Areas.Admin.Controllers
             ViewBag.Ms = "Melumatlari doldur gagas";
             return View(user);
         }
-
         public async Task<IActionResult> Logout()
         {
 

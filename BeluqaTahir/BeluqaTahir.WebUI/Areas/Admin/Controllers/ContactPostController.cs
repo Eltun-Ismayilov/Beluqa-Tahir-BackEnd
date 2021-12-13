@@ -13,13 +13,10 @@ namespace BeluqaTahir.WebUI.Areas.Admin.Controllers
     public class ContactPostController : Controller
     {
         private readonly BeluqaTahirDbContext db;
-
         public ContactPostController(BeluqaTahirDbContext db)
         {
             this.db = db;
         }
-
-
         public async Task<IActionResult> Index(int typeId)
         {
             var query = db.contacts.AsQueryable()
@@ -43,7 +40,6 @@ namespace BeluqaTahir.WebUI.Areas.Admin.Controllers
             }
             return View(await query.ToListAsync());
         }
-
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -63,8 +59,6 @@ namespace BeluqaTahir.WebUI.Areas.Admin.Controllers
 
             return View(contactPost);
         }
-
-
         [HttpPost]
         public async Task<IActionResult> Answer([Bind("Id", "Answer")] Contact model)
         {
