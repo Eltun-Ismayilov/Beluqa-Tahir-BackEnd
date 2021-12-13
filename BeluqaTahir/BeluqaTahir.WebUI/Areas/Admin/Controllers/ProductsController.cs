@@ -75,5 +75,48 @@ namespace BeluqaTahir.WebUI.Areas.Admin.Controllers
             return Json(respons);
         }
 
+        public async Task<IActionResult> Edit(ProductsSingleQuery query)
+        {
+            var respons = await mediator.Send(query);
+
+            if (respons == null)
+            {
+                return NotFound();
+            }
+            ProductsViewModel vm = new ProductsViewModel();
+
+            vm.Id = respons.Id;
+            vm.Name = respons.Name;
+            vm.Price = respons.Price;
+            vm.ImagePati = respons.ImagePati;
+            vm.Description = respons.Description;
+            vm.ShopDescription = respons.ShopDescription;
+            vm.FullName = respons.FullName;
+            vm.ProductTypesId = respons.ProductTypesId;
+
+            ViewData["ProductTypesId"] = new SelectList(db.products.Where(b => b.DeleteByUserId == null), "Id", "Name");
+
+            return View(vm);
+
+
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(ProductEditCommand command)
+        {
+
+            var id = await mediator.Send(command);
+
+            if (id > 0)
+
+                return RedirectToAction(nameof(Index));
+
+            ViewData["ProductTypesId"] = new SelectList(db.productTypes.Where(b => b.DeleteByUserId == null), "Id", "Name", command.ProductTypes);
+
+            return View(command);
+
+
+
+        }
     }
 }
