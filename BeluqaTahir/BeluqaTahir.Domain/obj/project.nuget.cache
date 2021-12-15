@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rdV1MwL+6CGL2MISMfi7S9XWYx9doU3/5D9dfnvH4rYJWIYuoe4LgHHVCg5Z50Q0PtfTS+xVV3Ra1EO94rMN2Q==",
+  "dgSpecHash": "3+MtifdtSmmzCwKL3qk3N29JylM4GbsssxbR2iaNMdFedAai0kH5KqS9kjl1H+R+An0WXOXOJe5utDYMukjz9w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj",
+  "projectFilePath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\emin.novruzov\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\emin.novruzov\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

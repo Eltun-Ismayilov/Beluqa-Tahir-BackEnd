@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\emin.novruzov\\Desktop\\xxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.WebUI\\BeluqaTahir.WebUI.csproj": {}
+    "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.WebUI\\BeluqaTahir.WebUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\emin.novruzov\\Desktop\\xxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\BeluqaTahir.Applications.csproj": {
+    "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\BeluqaTahir.Applications.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emin.novruzov\\Desktop\\xxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\BeluqaTahir.Applications.csproj",
+        "projectUniqueName": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\BeluqaTahir.Applications.csproj",
         "projectName": "BeluqaTahir.Applications",
-        "projectPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\BeluqaTahir.Applications.csproj",
+        "projectPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\BeluqaTahir.Applications.csproj",
         "packagesPath": "C:\\Users\\emin.novruzov\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\obj\\",
+        "outputPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\emin.novruzov\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\emin.novruzov\\Desktop\\xxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj": {
-                "projectPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj"
+              "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj": {
+                "projectPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj"
               }
             }
           }
@@ -80,14 +80,14 @@
         }
       }
     },
-    "C:\\Users\\emin.novruzov\\Desktop\\xxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj": {
+    "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emin.novruzov\\Desktop\\xxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj",
         "projectName": "BeluqaTahir.Domain",
-        "projectPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj",
+        "projectPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj",
         "packagesPath": "C:\\Users\\emin.novruzov\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\obj\\",
+        "outputPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\emin.novruzov\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -176,14 +176,14 @@
         }
       }
     },
-    "C:\\Users\\emin.novruzov\\Desktop\\xxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.WebUI\\BeluqaTahir.WebUI.csproj": {
+    "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.WebUI\\BeluqaTahir.WebUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emin.novruzov\\Desktop\\xxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.WebUI\\BeluqaTahir.WebUI.csproj",
+        "projectUniqueName": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.WebUI\\BeluqaTahir.WebUI.csproj",
         "projectName": "BeluqaTahir.WebUI",
-        "projectPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.WebUI\\BeluqaTahir.WebUI.csproj",
+        "projectPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.WebUI\\BeluqaTahir.WebUI.csproj",
         "packagesPath": "C:\\Users\\emin.novruzov\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.WebUI\\obj\\",
+        "outputPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.WebUI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\emin.novruzov\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -200,11 +200,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\emin.novruzov\\Desktop\\xxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\BeluqaTahir.Applications.csproj": {
-                "projectPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\BeluqaTahir.Applications.csproj"
+              "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\BeluqaTahir.Applications.csproj": {
+                "projectPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\BeluqaTahir.Applications.csproj"
               },
-              "C:\\Users\\emin.novruzov\\Desktop\\xxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj": {
-                "projectPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj"
+              "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj": {
+                "projectPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj"
               }
             }
           }

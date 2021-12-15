@@ -31,6 +31,7 @@ namespace BeluqaTahir.WebUI.Areas.Admin.Controllers
 
             return View(respons);
         }
+
         public IActionResult Create()
         {
             return View();
@@ -85,6 +86,7 @@ namespace BeluqaTahir.WebUI.Areas.Admin.Controllers
 
 
         }
+
         [HttpPost]
         public async Task<IActionResult> Delete(BlogsRemoveCommand requst)
         {

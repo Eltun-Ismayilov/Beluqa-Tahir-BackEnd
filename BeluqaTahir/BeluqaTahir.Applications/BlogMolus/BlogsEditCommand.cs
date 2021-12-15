@@ -5,16 +5,13 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace BeluqaTahir.Applications.BlogMolus
 {
- public   class BlogsEditCommand : BlogsViewModel, IRequest<int>
+    public   class BlogsEditCommand : BlogsViewModel, IRequest<int>
     {
 
 
