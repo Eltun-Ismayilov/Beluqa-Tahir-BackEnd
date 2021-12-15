@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace BeluqaTahir.Domain.Model.ViewModels
 {
@@ -48,100 +47,102 @@ namespace BeluqaTahir.Domain.Model.ViewModels
             return this;
         }
 
-        //public HtmlString GetPagenation(IUrlHelper urlHelper, string action, string area = "", string paginateFunction = "")
-        //{
-        //    if (PageSize >= TotalCount)
-        //        return HtmlString.Empty;
+        public HtmlString GetPagenation(IUrlHelper urlHelper, string action, string area = "", string paginateFunction = "")
+        {
+            if (PageSize >= TotalCount)
+                return HtmlString.Empty;
 
 
-        //    StringBuilder builder = new StringBuilder();
-        //    bool hasPaginationFunction = !string.IsNullOrWhiteSpace(paginateFunction);
+            StringBuilder builder = new StringBuilder();
+            bool hasPaginationFunction = !string.IsNullOrWhiteSpace(paginateFunction);
 
-        //    builder.Append("<ul class='pagination'>");
+            builder.Append("<ul class='pagination'>");
 
-        //    if (CurrentIndex > 1)
-        //    {
-        //        var link = hasPaginationFunction
-        //            ? $"javascript:{paginateFunction}({CurrentIndex - 1},{PageSize})"
-        //            : urlHelper.Action(action, values: new
-        //            {
-        //                pageindex = CurrentIndex - 1,
-        //                pagesize = PageSize,
-        //                area
-        //            });
+            if (CurrentIndex > 1)
+            {
+                var link = hasPaginationFunction
+                    ? $"javascript:{paginateFunction}({CurrentIndex - 1},{PageSize})"
+                    : urlHelper.Action(action, values: new
+                    {
+                        pageindex = CurrentIndex - 1,
+                        pagesize = PageSize,
+                        area
+                    });
 
-        //        builder.Append($@"<li class='prev'>
-        //                        <a href='{link}'><i class='fas fa-chevron-left'></i></a>
-        //                        </li>");
-        //    }
-        //    else
-        //    {
-        //        builder.Append(" <li class='prev disabled'>" +
-        //           "<a><i class='fas fa-chevron-left'></i></a></li>");
-        //    }
+                builder.Append($@"<li class='prev'>
+                                <a href='{link}'><i class='fas fa-chevron-left'></i></a>
+                                </li>");
+            }
+            else
+            {
+                builder.Append(" <li class='prev disabled'>" +
+                   "<a><i class='fas fa-chevron-left'></i></a></li>");
+            }
 
-        //    int min = 1, max = MaxPageIndex;
+            int min = 1, max = MaxPageIndex;
 
-        //    if (CurrentIndex > (int)Math.Floor(maxPaginationButtonCount / 2D))
-        //    {
-        //        min = CurrentIndex - (int)Math.Floor(maxPaginationButtonCount / 2D);
-        //    }
+            if (CurrentIndex > (int)Math.Floor(maxPaginationButtonCount / 2D))
+            {
+                min = CurrentIndex - (int)Math.Floor(maxPaginationButtonCount / 2D);
+            }
 
-        //    max = min + maxPaginationButtonCount - 1;
+            max = min + maxPaginationButtonCount - 1;
 
-        //    if (max > MaxPageIndex)
-        //    {
-        //        max = MaxPageIndex;
-        //        min = max - maxPaginationButtonCount + 1;
-        //    }
+            if (max > MaxPageIndex)
+            {
+                max = MaxPageIndex;
+                min = max - maxPaginationButtonCount + 1;
+            }
 
-        //    for (int i = (min < 1 ? 1 : min); i <= max; i++)
-        //    {
-        //        if (i == CurrentIndex)
-        //        {
-        //            builder.Append($"<li class='active'><a>{i}</a></li>");
-        //            continue;
-        //        }
+            for (int i = (min < 1 ? 1 : min); i <= max; i++)
+            {
+                if (i == CurrentIndex)
+                {
+                    builder.Append($"<li class='active'><a>{i}</a></li>");
+                    continue;
+                }
 
-        //        var link = hasPaginationFunction
-        //            ? $"javascript:{paginateFunction}({i},{PageSize})"
-        //            : urlHelper.Action(action, values: new
-        //            {
-        //                pageindex = i,
-        //                pagesize = PageSize,
-        //                area
-        //            });
+                var link = hasPaginationFunction
+                    ? $"javascript:{paginateFunction}({i},{PageSize})"
+                    : urlHelper.Action(action, values: new
+                    {
+                        pageindex = i,
+                        pagesize = PageSize,
+                        area
+                    });
 
-        //        builder.Append($"<li><a href='{link}'>{i}</a></li>");
+                builder.Append($"<li><a href='{link}'>{i}</a></li>");
 
-        //    }
-
-
-        //    if (CurrentIndex < MaxPageIndex)
-        //    {
-        //        var link = hasPaginationFunction
-        //            ? $"javascript:{paginateFunction}({CurrentIndex + 1},{PageSize})"
-        //            : urlHelper.Action(action, values: new
-        //            {
-        //                pageindex = CurrentIndex + 1,
-        //                pagesize = PageSize,
-        //                area
-        //            });
-
-        //        builder.Append($@"<li class='next'>
-        //                        <a href='{link}'><i class='fas fa-chevron-right'></i></a>
-        //                        </li>");
-        //    }
-        //    else
-        //    {
-        //        builder.Append(" <li class='next disabled'>" +
-        //           "<a><i class='fas fa-chevron-right'></i></a></li>");
-        //    }
+            }
 
 
-        //    builder.Append("</ul>");
+            if (CurrentIndex < MaxPageIndex)
+            {
+                var link = hasPaginationFunction
+                    ? $"javascript:{paginateFunction}({CurrentIndex + 1},{PageSize})"
+                    : urlHelper.Action(action, values: new
+                    {
+                        pageindex = CurrentIndex + 1,
+                        pagesize = PageSize,
+                        area
+                    });
 
-        //    return new HtmlString(builder.ToString());
-        //}
+                builder.Append($@"<li class='next'>
+                                <a href='{link}'><i class='fas fa-chevron-right'></i></a>
+                                </li>");
+            }
+            else
+            {
+                builder.Append(" <li class='next disabled'>" +
+                   "<a><i class='fas fa-chevron-right'></i></a></li>");
+
+
+            }
+
+
+            builder.Append("</ul>");
+
+            return new HtmlString(builder.ToString());
+        }
     }
 }

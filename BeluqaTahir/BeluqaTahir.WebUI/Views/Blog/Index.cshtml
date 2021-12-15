@@ -152,136 +152,7 @@
             </div>
         }
 
-        @*<div data-aos="fade-up" class="col-lg-6 blog-post post responsive">
-
-                <div class="blog-post__div">
-
-                    <a href="" style="background-image: url(./assets/images/blog-2.jpg); background-size: cover;background-position: center center;"></a>
-
-                    <div class="blog-post__div__desc">
-                        <i class="fa fa-calendar"></i>
-                        <p>23 April 2020</p>
-                        <h3>
-                            <p href="index.html">The Recipe from a Winemaker’s Restaurent</p>
-
-                        </h3>
-                        <p class="small">
-                            A small river named Duden flows by their place and supplies it with the necessary regelialia.
-                        </p>
-                        <a class="Continue" href="">
-                            Continue
-                            <i style="margin-left: 0px;color: red;display: inline-block;margin-top: px;font-size: 12px;" class="fa fa-long-arrow-right"></i>
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-            <div data-aos="fade-up" class="col-lg-6 blog-post post responsive1">
-
-                <div class="blog-post__div">
-
-                    <a href="" style="background-image: url(./assets/images/blog-3.jpg); background-size: cover;background-position: center center;"></a>
-
-                    <div class="blog-post__div__desc">
-                        <i class="fa fa-calendar"></i>
-                        <p>23 April 2020</p>
-                        <h3>
-                            <p href="index.html">The Recipe from a Winemaker’s Restaurent</p>
-
-                        </h3>
-                        <p class="small">
-                            A small river named Duden flows by their place and supplies it with the necessary regelialia.
-                        </p>
-                        <a class="Continue" href="">
-                            Continue
-                            <i style="margin-left: 0px;color: red;display: inline-block;margin-top: px;font-size: 12px;" class="fa fa-long-arrow-right"></i>
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-            <div data-aos="fade-up" class="col-lg-6 blog-post post responsive2">
-
-                <div class="blog-post__div">
-
-                    <a href="" style="background-image: url(./assets/images/blog-4.jpg); background-size: cover;background-position: center center;"></a>
-
-                    <div class="blog-post__div__desc">
-                        <i class="fa fa-calendar"></i>
-                        <p>23 April 2020</p>
-                        <h3>
-                            <p href="index.html">The Recipe from a Winemaker’s Restaurent</p>
-
-                        </h3>
-                        <p class="small">
-                            A small river named Duden flows by their place and supplies it with the necessary regelialia.
-                        </p>
-                        <a class="Continue" href="">
-                            Continue
-                            <i style="margin-left: 0px;color: red;display: inline-block;margin-top: px;font-size: 12px;" class="fa fa-long-arrow-right"></i>
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-            <div data-aos="fade-up" class="col-lg-6 blog-post post responsive2">
-
-                <div class="blog-post__div">
-
-                    <a href="" style="background-image: url(./assets/images/blog-4.jpg); background-size: cover;background-position: center center;"></a>
-
-                    <div class="blog-post__div__desc">
-                        <i class="fa fa-calendar"></i>
-                        <p>23 April 2020</p>
-                        <h3>
-                            <p href="index.html">The Recipe from a Winemaker’s Restaurent</p>
-
-                        </h3>
-                        <p class="small">
-                            A small river named Duden flows by their place and supplies it with the necessary regelialia.
-                        </p>
-                        <a class="Continue" href="">
-                            Continue
-                            <i style="margin-left: 0px;color: red;display: inline-block;margin-top: px;font-size: 12px;" class="fa fa-long-arrow-right"></i>
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-            <div data-aos="fade-up" class="col-lg-6 blog-post post responsive2">
-
-                <div class="blog-post__div">
-
-                    <a href="" style="background-image: url(./assets/images/blog-4.jpg); background-size: cover;background-position: center center;"></a>
-
-                    <div class="blog-post__div__desc">
-                        <i class="fa fa-calendar"></i>
-                        <p>23 April 2020</p>
-                        <h3>
-                            <p href="index.html">The Recipe from a Winemaker’s Restaurent</p>
-
-                        </h3>
-                        <p class="small">
-                            A small river named Duden flows by their place and supplies it with the necessary regelialia.
-                        </p>
-                        <a class="Continue" href="">
-                            Continue
-                            <i style="margin-left: 0px;color: red;display: inline-block;margin-top: px;font-size: 12px;" class="fa fa-long-arrow-right"></i>
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>*@
+       
 
 
     </div>
@@ -305,8 +176,10 @@
         <li class="page-item ">
             <a class="page-link" href="#">></a>
         </li>
-
     </ul>
 </nav>
 
+<nav class="paginationnav" aria-label="...">
+    @Model.GetPagenation(Url, "index")
 
+    </nav>

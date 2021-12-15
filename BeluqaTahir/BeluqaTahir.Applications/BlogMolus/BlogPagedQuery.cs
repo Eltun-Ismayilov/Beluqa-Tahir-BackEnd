@@ -13,62 +13,9 @@ namespace BeluqaTahir.Applications.BlogMolus
 {
   public  class BlogPagedQuery : IRequest<PagedViewModel<BlogPost>>
     {
-        //public int pageSize { get; set; } = 3;
-
-        //int pageIndex;
-        //int pageSize;
-
-        //public int PageIndex
-        //{
-
-        //    get
-        //    {
-        //        if (pageIndex > 0)
-        //        {
-        //            return pageIndex;
-        //        }
-        //        return 1;
-        //    }
-        //    set
-        //    {
-        //        if (value > 0)
-        //        {
-        //            pageIndex = value;
-        //        }
-        //        else
-        //        {
-        //            pageIndex = 1;
-        //        }
-        //    }
-        //}
-
-
-        //public int PageSize
-        //{
-
-        //    get
-        //    {
-        //        if (pageSize > 0)
-        //        {
-        //            return pageSize;
-        //        }
-        //        return 15;
-        //    }
-        //    set
-        //    {
-        //        if (value > 0)
-        //        {
-        //            pageSize = value;
-        //        }
-        //        else
-        //        {
-        //            pageIndex = 15;
-        //        }
-        //    }
-        //}
-
+      
         public int pageIndex { get; set; } = 1;
-        public int pageSize { get; set; } = 6;
+        public int pageSize { get; set; } = 4;
 
         public class BlogPagedQueryHandler : IRequestHandler<BlogPagedQuery, PagedViewModel<BlogPost>>
         {

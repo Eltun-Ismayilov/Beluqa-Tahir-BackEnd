@@ -16,7 +16,7 @@ namespace BeluqaTahir.Applications.ProductType
 
 
         public int pageIndex { get; set; } = 1;
-        public int pageSize { get; set; } = 5;
+        public int pageSize { get; set; } = 3;
 
         public class ProductTypesPagedQueryHandler : IRequestHandler<ProductTypesPagedQuery, PagedViewModel<ProductTypes>>
         {
