@@ -712,3 +712,10 @@ C:\Users\emin.novruzov\Desktop\xxxxxxxx\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaT
 C:\Users\emin.novruzov\Desktop\xxxxxxxx\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\obj\Debug\net5.0\Razor\Areas\Admin\Views\HappyClients\Details.cshtml.g.cs
 C:\Users\emin.novruzov\Desktop\xxxxxxxx\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\obj\Debug\net5.0\Razor\Areas\Admin\Views\HappyClients\Edit.cshtml.g.cs
 C:\Users\emin.novruzov\Desktop\xxxxxxxx\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\obj\Debug\net5.0\Razor\Areas\Admin\Views\HappyClients\Index.cshtml.g.cs
+C:\Users\emin.novruzov\Desktop\xxxxxxxx\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\obj\Debug\net5.0\Razor\Views\Shop\AddBasket.cshtml.g.cs
+C:\Users\emin.novruzov\Desktop\xxxxxxxx\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\obj\Debug\net5.0\Razor\Views\Shop\Basket.cshtml.g.cs
+C:\Users\emin.novruzov\Desktop\xxxxxxxx\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Accountdetails\Create.cshtml.g.cs
+C:\Users\emin.novruzov\Desktop\xxxxxxxx\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Accountdetails\Delete.cshtml.g.cs
+C:\Users\emin.novruzov\Desktop\xxxxxxxx\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Accountdetails\Details.cshtml.g.cs
+C:\Users\emin.novruzov\Desktop\xxxxxxxx\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Accountdetails\Edit.cshtml.g.cs
+C:\Users\emin.novruzov\Desktop\xxxxxxxx\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Accountdetails\Index.cshtml.g.cs

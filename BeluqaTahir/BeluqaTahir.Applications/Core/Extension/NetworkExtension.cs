@@ -3,7 +3,7 @@ using System;
 using System.Net;
 using System.Net.Mail;
 
-namespace BeluqaTahir.Applications.Core.Extension
+namespace Riode.WebUI.Appcode
 {
     static public partial class Extension
     {
@@ -16,7 +16,7 @@ namespace BeluqaTahir.Applications.Core.Extension
         {
             try
             {
-
+                // appsettings melumatlari getirik
                 string fromMail = configuration["emailAccount:UserName"];
                 string displayName = configuration["emailAccount:displayName"];
                 string smtpServer = configuration["emailAccount:smtpServer"];
@@ -24,6 +24,7 @@ namespace BeluqaTahir.Applications.Core.Extension
                 string password = configuration["emailAccount:password"];
                 string cc = configuration["emailAccount:cc"];
 
+                // message gonderik from to vasitesi ile;
 
                 using (MailMessage message = new MailMessage(new MailAddress(fromMail, displayName), new MailAddress(to))
                 {
@@ -38,8 +39,8 @@ namespace BeluqaTahir.Applications.Core.Extension
                         message.CC.Add(cc);
 
                     SmtpClient smtpClient = new SmtpClient(smtpServer, smtpPort);
-                    smtpClient.Credentials = new NetworkCredential(fromMail, password);
-                    smtpClient.EnableSsl = true;
+                    smtpClient.Credentials = new NetworkCredential(fromMail, password);// ?
+                    smtpClient.EnableSsl = true; // ?
                     smtpClient.Send(message);
                 }
             }

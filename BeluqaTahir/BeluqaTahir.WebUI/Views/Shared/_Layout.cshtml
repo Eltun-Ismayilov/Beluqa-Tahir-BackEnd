@@ -169,12 +169,10 @@
                                class="form-control"
                                name="email"
                                id="email"
-                               placeholder="Email address here..."
-                               data-rule-required="true"
-                               data-msg-required="Bosh buraxmayin"
-                               data-rule-email="true"
-                               data-msg-email="Email daxil edin" />
+                               placeholder="Email address here..." />
+
                         <button style="margin-top:0px" class="btn btn-primary btn-rounded btn-md ml-2" type="submit">
+
                             subscribe<i class="d-icon-arrow-right"></i>
                         </button>
 
@@ -222,12 +220,10 @@
         AOS.init();
     </script>
     <script src="~/assets/js/main.js"></script>
+
     <script>
-
         $(document).ready(function () {
-
             $('#form').validate({
-
                 errorElement: 'span', // Cixan eror label yox span etdih
                 // errorClass: 'is-invalid', // span error cixan zaman class
                 //  validClass: 'is-valid', // span error cixan zaman class input class
@@ -236,13 +232,9 @@
                 },
                 unhighlight: function (element, errorClass, validClass) {
                     $(element).addClass('is-valid').remove('is-invalid') // eger error yoxdusa
-
                 },
             });
-
-
         });
-
         toastr.options = {
             "closeButton": false,
             "debug": false,
@@ -260,57 +252,52 @@
             "showMethod": "fadeIn",
             "hideMethod": "fadeOut"
         };
-
-        $(document).ready(function () {
-
-        $('#form').submit(function (e) {
+    $(document).ready(function () {
+    $('#form').submit(function (e) {
         e.preventDefault();
-
     if ($(e.currentTarget).valid() != true)
     return;
-
     const formData = new FormData(e.currentTarget);
-
     $.ajax({
-
     url: '@Url.Action("Subscrice")', // URL HELPERLER
     type: 'POST',
     data: formData,
     contentType: false,
     processData: false,
-
     success: function (gelenData) {
     console.log(gelenData);
-
         if (gelenData.error == false) {
         toastr.success(gelenData.massege, 'ugurludur');
     e.currentTarget.reset(); // FORM BOSALDIR
-
-
-
-
     } else {
         toastr.error(gelenData.massege, 'xeta');
-
     }
     },
     error: function (gelenData) {
     console.log(gelenData);
     toastr.success('Teyin olunmamis xeta bas verib', 'Error');
-
     },
-
     });
-
-
     });
-           
-       };
-            
-
+      //  const lang = `Context.GetCurrentCulture()`;
+        const text = $(`[data-lang="${lang}"]`).text();
+        $(`[data-lang-viewer="language"]`).text(text);
+        $('[data-lang]').click(function (e) {
+            e.preventDefault();
+            let path = `${window.location.pathname}${window.location.search}`;
+            let selectedlang = $(e.currentTarget).data('lang');
+            let result = /\/(en|az|eu)?\/?(.*)?/.exec(path);
+            if (result != null && result[2] != undefined) {
+                path = `/${selectedlang}/${result[2]}`;
+            }
+            else if (result != null) {
+                path = `/${selectedlang}`;
+            }
+            window.location.href = path;
+        });
+    });
     </script>
 
-    <!-- count up -->
     @RenderSection("addjs", required: false);
 </body>
 </html>

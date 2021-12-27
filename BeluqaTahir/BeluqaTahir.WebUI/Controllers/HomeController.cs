@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Riode.WebUI.Appcode;
 using System;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -34,7 +35,6 @@ namespace BeluqaTahir.WebUI.Controllers
             this.configuration = configuration;
             this.userManager = userManager;
             this.signInManager = signInManager;
-
         }
         public IActionResult Index()
         {
@@ -156,48 +156,6 @@ namespace BeluqaTahir.WebUI.Controllers
 
         }
 
-
-        [HttpGet]
-        [Route("subscribe-confirmm")]
-        public IActionResult SubscibeConfirm(string token)
-        {
-
-
-            token = token.Decrypte("");
-
-            Match match = Regex.Match(token, @"subscribetoken-(?<id>[a-zA-Z0-9]*)(.*)-(?<timeStampt>\d{14})");
-
-            if (match.Success)
-            {
-                string id = match.Groups["id"].Value;
-                string executeTimeStamp = match.Groups["executeTimeStamp"].Value;
-
-                var subsc = bt.Users.FirstOrDefault(s => s.UserName == id);
-
-                if (subsc == null)
-                {
-                    ViewBag.ms = Tuple.Create(true, "Token xetasi");
-                    goto end;
-                }
-                if (subsc.EmailConfirmed == true)
-                {
-                    ViewBag.ms = Tuple.Create(true, "Artiq tesdiq edildi");
-                    goto end;
-                }
-                subsc.EmailConfirmed = true;
-                bt.SaveChanges();
-
-                ViewBag.ms = Tuple.Create(false, "Abuneliyiniz tesdiq edildi");
-
-            }
-        end:
-            return View();
-        }
-
-
-
-
-
         public IActionResult Signin()
         {
             //Eger giris edibse routda myaccount/sing yazanda o seyfe acilmasin homa tulaasin
@@ -299,6 +257,118 @@ namespace BeluqaTahir.WebUI.Controllers
             await signInManager.SignOutAsync();
             return RedirectToAction(nameof(Signin));
 
+        }
+     
+        [HttpPost]
+        [Route("/Subscrice.html")]
+        public IActionResult Subscrice([Bind("Email")] Subscrice model)
+        {
+
+            if (ModelState.IsValid)
+            {
+                var current = bt.subscrices.FirstOrDefault(s => s.Email.Equals(model.Email));
+                if (current != null && current.EmailConfirmed == true)
+                {
+                    return Json(new
+                    {
+
+                        error = true,
+                        massege = "Bu E-Mail evvelceden qeydiyyati edilib"
+
+                    });
+                }
+                else if (current != null && (current.EmailConfirmed ?? false == false))
+                {
+                    return Json(new
+                    {
+
+                        error = true,
+                        massege = "Bu E-Mail evvelceden qeydiyyati edilib "
+
+                    });
+                }
+
+
+                bt.subscrices.Add(model);
+                bt.SaveChanges();
+
+
+                string token = $"subscribetoken-{model.Id}-{DateTime.Now:yyyyMMddHHmmss}"; // token yeni id goturuk
+
+                token = token.Encrypt("");
+
+                string path = $"{Request.Scheme}://{Request.Host}/subscribe-confirm?token={token}"; // path duzeldirik
+
+
+
+                var mailSended = configuration.SendEmail(model.Email, "Riode seyfesi gagas", $"Zehmet olmasa <a href={path}>Link</a> vasitesile abuneliyi tamamlayin");
+                if (mailSended == null)
+                {
+                    bt.Database.RollbackTransaction();
+
+                    return Json(new
+                    {
+                        error = false,
+                        massege = "Email-gonderilmasi zamini xeta bas verdi!"
+
+                    });
+                }
+
+                return Json(new
+                {
+
+                    error = false,
+                    massege = "Sorgunuz ugurla qeyde alindi!!"
+
+                });
+            }
+
+
+
+            return Json(new
+            {
+
+                error = true,
+                massege = "Sorgunuzun Icrasi zamani xeta yarandi,Zehmet olmasa yeniden yoxlayin"
+
+            });
+        }
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("subscribe-confirmm")]
+        public IActionResult SubscibeConfirm(string token)
+        {
+
+
+            token = token.Decrypte("");
+
+            Match match = Regex.Match(token, @"subscribetoken-(?<id>[a-zA-Z0-9]*)(.*)-(?<timeStampt>\d{14})");
+
+            if (match.Success)
+            {
+                string id = match.Groups["id"].Value;
+                string executeTimeStamp = match.Groups["executeTimeStamp"].Value;
+
+                var subsc = bt.Users.FirstOrDefault(s => s.UserName == id);
+
+                if (subsc == null)
+                {
+                    ViewBag.ms = Tuple.Create(true, "Token xetasi");
+                    goto end;
+                }
+                if (subsc.EmailConfirmed == true)
+                {
+                    ViewBag.ms = Tuple.Create(true, "Artiq tesdiq edildi");
+                    goto end;
+                }
+                subsc.EmailConfirmed = true;
+                bt.SaveChanges();
+
+                ViewBag.ms = Tuple.Create(false, "Abuneliyiniz tesdiq edildi");
+
+            }
+        end:
+            return View();
         }
     }
 }

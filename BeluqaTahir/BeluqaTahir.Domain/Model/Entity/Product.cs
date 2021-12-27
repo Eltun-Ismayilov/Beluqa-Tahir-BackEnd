@@ -10,6 +10,7 @@
         public string ShopDescription { get; set; }
         public int ProductTypesId { get; set; }
         public string ImagePati { get; set; }
+      
         public virtual ProductTypes ProductTypes { get; set; }
 
 
