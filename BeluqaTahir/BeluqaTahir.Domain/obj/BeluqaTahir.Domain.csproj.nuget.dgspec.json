@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj": {}
+    "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj": {
+    "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj",
         "projectName": "BeluqaTahir.Domain",
-        "projectPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj",
-        "packagesPath": "C:\\Users\\emin.novruzov\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\obj\\",
+        "projectPath": "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\emin.novruzov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -100,7 +100,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.210\\RuntimeIdentifierGraph.json"
         }
       }
     }

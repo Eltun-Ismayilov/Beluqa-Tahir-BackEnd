@@ -94,7 +94,7 @@ namespace BeluqaTahir.WebUI.Areas.Admin.Controllers
             vm.FullName = respons.FullName;
             vm.ProductTypesId = respons.ProductTypesId;
 
-            ViewData["ProductTypesId"] = new SelectList(db.products.Where(b => b.DeleteByUserId == null), "Id", "Name");
+            ViewData["ProductTypesId"] = new SelectList(db.productTypes.Where(b => b.DeleteByUserId == null), "Id", "Name");
 
             return View(vm);
 

@@ -41,66 +41,27 @@ namespace BeluqaTahir.WebUI.Controllers
             return View(respons);
         }
 
-
-        public async Task<IActionResult> AddBasket(int? id)
+        public async Task<IActionResult> ShoppingCard()
         {
-            if (id == null) return NotFound();
 
-            var product = await bt.products.FindAsync(id);
-
-            if (product == null) return NotFound();
-
-            List<BasketViewModel> basketViewModels = new List<BasketViewModel>();
-            if (Request.Cookies["basket"]!=null)
+            if (Request.Cookies.TryGetValue("basket", out string basketJson))
             {
-                basketViewModels = JsonConvert.DeserializeObject<List<BasketViewModel>>(Request.Cookies["basket"]);
-            }
+                var data = JsonConvert.DeserializeObject<List<BasketViewModel>>(basketJson);
 
-            BasketViewModel isExitProduct = basketViewModels.FirstOrDefault(b => b.Id == id);
-            if (isExitProduct==null)
-            { 
-                BasketViewModel basketVM = new BasketViewModel { Id = product.Id, Count = 1 };
-                basketViewModels.Add(basketVM);
-            }
-            else
-            {
-                isExitProduct.Count += 1;
-            }
-
-           // ViewBag.basket = basketViewModels.Sum(p => p.Count);
-            string basket = JsonConvert.SerializeObject(basketViewModels);
-          
-            Response.Cookies.Append("basket", basket, new CookieOptions { MaxAge = TimeSpan.FromDays(10) });
-
-            return RedirectToAction(nameof(Index));
-        
-
-
-        }
-
-        public async Task<IActionResult> Basket()
-        {
-            List<BasketViewModel> basketvms = JsonConvert.DeserializeObject<List<BasketViewModel>>(Request.Cookies["basket"]);
-            List<BasketRazorVM> baskets = new List<BasketRazorVM>();
-
-            foreach (var item in basketvms)
-            {
-                Product product = await bt.products.FindAsync(item.Id);
-                BasketRazorVM basketRazorVM = new BasketRazorVM
+                foreach (var item in data)
                 {
-                    Id = product.Id,
-                    Name = product.Name,
-                    Price = product.Price,
-                    ImagePati = product.ImagePati,
-                   // Count = product.Count
-                };
-                baskets.Add(basketRazorVM);
+                    var product = await bt.products.FirstOrDefaultAsync(p => p.Id == item.ProductId);
+                    item.Name = product.Name;
+                    item.Price = product.Price;
+                    item.ImagePati = product.ImagePati;
+                }
 
+                return View(data);
             }
 
-         //   TempData["xxx"]= basketRazorVM.count
-
-            return View(baskets);
+            return View();
         }
+
+
     }
 }

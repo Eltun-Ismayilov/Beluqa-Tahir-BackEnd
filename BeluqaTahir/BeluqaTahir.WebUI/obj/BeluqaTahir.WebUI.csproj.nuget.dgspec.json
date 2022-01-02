@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.WebUI\\BeluqaTahir.WebUI.csproj": {}
+    "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.WebUI\\BeluqaTahir.WebUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\BeluqaTahir.Applications.csproj": {
+    "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\BeluqaTahir.Applications.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\BeluqaTahir.Applications.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\BeluqaTahir.Applications.csproj",
         "projectName": "BeluqaTahir.Applications",
-        "projectPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\BeluqaTahir.Applications.csproj",
-        "packagesPath": "C:\\Users\\emin.novruzov\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\obj\\",
+        "projectPath": "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\BeluqaTahir.Applications.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\emin.novruzov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj": {
-                "projectPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj"
+              "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj"
               }
             }
           }
@@ -76,21 +76,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.210\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj": {
+    "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj",
         "projectName": "BeluqaTahir.Domain",
-        "projectPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj",
-        "packagesPath": "C:\\Users\\emin.novruzov\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\obj\\",
+        "projectPath": "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\emin.novruzov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -176,21 +176,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.210\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.WebUI\\BeluqaTahir.WebUI.csproj": {
+    "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.WebUI\\BeluqaTahir.WebUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.WebUI\\BeluqaTahir.WebUI.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.WebUI\\BeluqaTahir.WebUI.csproj",
         "projectName": "BeluqaTahir.WebUI",
-        "projectPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.WebUI\\BeluqaTahir.WebUI.csproj",
-        "packagesPath": "C:\\Users\\emin.novruzov\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.WebUI\\obj\\",
+        "projectPath": "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.WebUI\\BeluqaTahir.WebUI.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.WebUI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\emin.novruzov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -204,11 +204,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\BeluqaTahir.Applications.csproj": {
-                "projectPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\BeluqaTahir.Applications.csproj"
+              "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\BeluqaTahir.Applications.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\BeluqaTahir.Applications.csproj"
               },
-              "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj": {
-                "projectPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj"
+              "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj"
               }
             }
           }
@@ -274,12 +274,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[5.0.12, 5.0.12]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -288,7 +282,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.210\\RuntimeIdentifierGraph.json"
         }
       }
     }

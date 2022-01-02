@@ -7182,19 +7182,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\emin.novruzov\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\BeluqaTahir.Applications.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\BeluqaTahir.Applications.csproj",
       "projectName": "BeluqaTahir.Applications",
-      "projectPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\BeluqaTahir.Applications.csproj",
-      "packagesPath": "C:\\Users\\emin.novruzov\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\obj\\",
+      "projectPath": "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\BeluqaTahir.Applications.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Applications\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\emin.novruzov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7208,8 +7208,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj": {
-              "projectPath": "C:\\Users\\emin.novruzov\\Desktop\\xxxxxxxx\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj"
+            "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\Beluqa-Tahir-BackEnd\\BeluqaTahir\\BeluqaTahir.Domain\\BeluqaTahir.Domain.csproj"
             }
           }
         }
@@ -7256,7 +7256,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.210\\RuntimeIdentifierGraph.json"
       }
     }
   }
