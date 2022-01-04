@@ -17,6 +17,7 @@ namespace BeluqaTahir.WebUI.Areas.Admin.Controllers
         {
             this.db = db;
         }
+
         public async Task<IActionResult> Index(int typeId)
         {
             var query = db.contacts.AsQueryable()

@@ -3,7 +3,7 @@ using System;
 using System.Net;
 using System.Net.Mail;
 
-namespace Riode.WebUI.Appcode
+namespace BeluqaTahir.Applications.Core.Extension
 {
     static public partial class Extension
     {
