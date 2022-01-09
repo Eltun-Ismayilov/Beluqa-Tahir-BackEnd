@@ -84,5 +84,6 @@ namespace BeluqaTahir.WebUI.Areas.Admin.Controllers
             await db.SaveChangesAsync();
             return Redirect(nameof(Index));
         }
+
     }
 }

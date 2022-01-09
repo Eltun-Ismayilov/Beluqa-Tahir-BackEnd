@@ -34,5 +34,7 @@ namespace BeluqaTahir.WebUI.Controllers
 
             return View(respons);
         }
+
+
     }
 }
