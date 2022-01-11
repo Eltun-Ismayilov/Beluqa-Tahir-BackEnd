@@ -300,8 +300,8 @@ namespace BeluqaTahir.WebUI.Controllers
 
 
 
-                var mailSended = configuration.SendEmail(model.Email, "Riode seyfesi gagas", $"Zehmet olmasa <a href={path}>Link</a> vasitesile abuneliyi tamamlayin");
-                if (mailSended == null)
+                var mailSended = configuration.SendEmail(model.Email, "Riode seyfesi gagas", $"Siz yeni melumatlardan xederdar olacaqsiniz");
+                if (mailSended == false)
                 {
                     bt.Database.RollbackTransaction();
 
