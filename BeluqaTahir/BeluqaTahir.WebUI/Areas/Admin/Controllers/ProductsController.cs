@@ -75,6 +75,7 @@ namespace BeluqaTahir.WebUI.Areas.Admin.Controllers
             return Json(respons);
         }
 
+
         public async Task<IActionResult> Edit(ProductsSingleQuery query)
         {
             var respons = await mediator.Send(query);
@@ -98,10 +99,10 @@ namespace BeluqaTahir.WebUI.Areas.Admin.Controllers
 
             return View(vm);
 
-
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+
         public async Task<IActionResult> Edit(ProductEditCommand command)
         {
 

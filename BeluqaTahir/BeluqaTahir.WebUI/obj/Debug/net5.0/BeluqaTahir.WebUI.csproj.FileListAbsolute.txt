@@ -1180,3 +1180,4 @@ C:\Users\User\Desktop\Beluqa-Tahir-BackEnd\BeluqaTahir\Beluqa-Tahir-BackEnd\Belu
 C:\Users\User\Desktop\Beluqa-Tahir-BackEnd\BeluqaTahir\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\obj\Debug\net5.0\ref\BeluqaTahir.WebUI.dll
 C:\Users\User\Desktop\Beluqa-Tahir-BackEnd\BeluqaTahir\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\obj\Debug\net5.0\BeluqaTahir.WebUI.pdb
 C:\Users\User\Desktop\Beluqa-Tahir-BackEnd\BeluqaTahir\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\obj\Debug\net5.0\BeluqaTahir.WebUI.genruntimeconfig.cache
+C:\Users\User\Desktop\Beluqa-Tahir-BackEnd\BeluqaTahir\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\obj\Debug\net5.0\Razor\Views\Blog\_Comment.cshtml.g.cs

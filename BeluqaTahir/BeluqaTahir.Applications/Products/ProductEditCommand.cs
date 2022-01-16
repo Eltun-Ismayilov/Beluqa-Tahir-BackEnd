@@ -17,7 +17,7 @@ namespace BeluqaTahir.Applications.Products
         {
             readonly BeluqaTahirDbContext db;
             readonly IActionContextAccessor ctx;
-            readonly IHostEnvironment env;
+            readonly IHostEnvironment env;      
 
 
             public ProductEditCommandHandler(BeluqaTahirDbContext db, IActionContextAccessor ctx, IHostEnvironment env)
