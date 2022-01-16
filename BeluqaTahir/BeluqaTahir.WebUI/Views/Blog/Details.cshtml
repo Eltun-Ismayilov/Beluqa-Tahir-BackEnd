@@ -1,6 +1,22 @@
-﻿@model BlogPost
+﻿
+
+@model BlogViewModel
+
 @{
     ViewData["Title"] = "Details";
+
+    IEnumerable<BlogPostComment> GetComments(BlogPostComment parent)
+    {
+        if (parent.ParentId != null)
+        {
+            yield return parent;
+        }
+
+        foreach (var item in parent.Children.SelectMany(c => GetComments(c)))
+        {
+            yield return item;
+        }
+    }
 }
 
 <div class="site-navbar-wrap">
@@ -122,24 +138,24 @@
 <div class="container">
     <div class="row mt-5">
         <div class="col-lg-8 blogsingle yeah12 ">
-            <img src="~/assets/images/@Model.ImagePati" alt="">
-            <h2>@Model.Title</h2>
+            <img src="~/assets/images/@Model.BlogPosts.ImagePati" alt="">
+            <h2>@Model.BlogPosts.Title</h2>
             <p class="p">
-                @Model.Description
+                @Model.BlogPosts.Description
             </p>
             <p style="margin-top:-10px" class="p">
-                @Model.ShopDescription
+                @Model.BlogPosts.ShopDescription
             </p>
             <h2 style="margin-top: 50px;">#2. Creative WordPress Themes</h2>
             <p id="renderboyddi">
-                @Html.Raw(Model.Body)
+                @Html.Raw(Model.BlogPosts.Body)
             </p>
             <div class="George">
                 <div class="img">
                     <img src="~/assets/images/blog-single.jpg" alt="">
                 </div>
                 <div class="img1">
-                    <h3>George Washington</h3>
+                    <h3>@Model.BlogPosts.CreateByUser?.UserName.ToUpper()</h3>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!
 
@@ -148,63 +164,53 @@
             </div>
             <h2 style="margin-top:50px">6 Comments</h2>
 
+
+
             <ul style="margin-top:50px" class="comment-list">
-                <li class="comment">
-                    <div class="vcard bio">
-                        <img src="/assets/images/blog-single.jpg">
-                    </div>
-                    <div class="comment-body">
-                        <h3>John Doe</h3>
-                        <div class="meta">April 12, 2020 at 1:21am</div>
-                        <p class="context1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                        <p>
-                            <a href="#" class="reply">Reply</a>
-                        </p>
-                    </div>
-                </li>
+                @foreach (var comment in Model.BlogPosts.Comments.Where(c => c.ParentId == null))
+                {
+                    <li class="comment">
+                        <div class="vcard bio">
+                            <img src="/assets/images/blog-single.jpg">
+                        </div>
+                        <div class="comment-body">
+                            <h3>@($"{comment.CreateByUser?.UserName.ToUpper()}")</h3>
+                            <div class="meta">@comment.CreateData.ToString("MMMM d,yyyy HH:mm")</div>
+                            <p class="context1">@comment.Comment</p>
+                            <p>
+                                <a href="#" class="reply">Reply</a>
+                            </p>
+                        </div>
 
-                <li class="comment">
-                    <div class="vcard bio">
-                        <img src="/assets/images/blog-single.jpg">
-                    </div>
-                    <div class="comment-body">
-                        <h3>John Doe</h3>
-                        <div class="meta">April 12, 2020 at 1:21am</div>
-                        <p class="context1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                        <p>
-                            <a href="#" class="reply">Reply</a>
-                        </p>
-                    </div>
+                    </li>
+                    @foreach (var subcomments in GetComments(comment))
+                    {
+                        <ul class="children">
+                            <li style="margin-top: 50px;" class="comment">
+                                <div class="vcard bio">
+                                    <img src="/assets/images/blog-single.jpg" alt="Image placeholder">
+                                </div>
+                                <div class="comment-body">
+                                    <h3>@($"{comment.CreateByUser?.UserName.ToUpper()}")</h3>
+                                    <div class="meta">@subcomments.CreateData.ToString("MMMM d,yyyy HH:mm")</div>
+                                    <p>@subcomments.Comment</p>
+                                    <p><a href="#" class="reply">Reply</a></p>
+                                </div>
 
-                    <ul class="children">
-                        <li style="margin-top: 50px;" class="comment">
-                            <div class="vcard bio">
-                                <img src="/assets/images/blog-single.jpg" alt="Image placeholder">
-                            </div>
-                            <div class="comment-body">
-                                <h3>John Doe</h3>
-                                <div class="meta">April 12, 2020 at 1:21am</div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                                <p><a href="#" class="reply">Reply</a></p>
-                            </div>
+                            </li>
+                        </ul>
+                    }
 
-                        </li>
-                    </ul>
-                </li>
+                }
 
-                <li class="comment">
-                    <div class="vcard bio">
-                        <img src="/assets/images/blog-single.jpg">
-                    </div>
-                    <div class="comment-body">
-                        <h3>John Doe</h3>
-                        <div class="meta">April 12, 2020 at 1:21am</div>
-                        <p class="context1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                        <p>
-                            <a href="#" class="reply">Reply</a>
-                        </p>
-                    </div>
-                </li>
+
+
+
+
+
+
+
+
             </ul>
 
 
@@ -231,6 +237,7 @@
 
                 </form>
             </div>
+
 
         </div>
 
@@ -323,8 +330,3 @@
 </div>
 
 
-@section addjs{ 
-
-
-
-}

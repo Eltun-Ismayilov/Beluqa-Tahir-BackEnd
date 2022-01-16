@@ -25,15 +25,18 @@ namespace BeluqaTahir.WebUI.Controllers
             var respons = await db.Send(query);
 
             return View(respons);
+
         }
+
         [AllowAnonymous]
-        public async Task<IActionResult> Details(BlogSingleQuery query)
+        public async Task<IActionResult> Details(BlogList query)
         {
 
             var respons = await db.Send(query);
 
             return View(respons);
         }
+
 
 
     }

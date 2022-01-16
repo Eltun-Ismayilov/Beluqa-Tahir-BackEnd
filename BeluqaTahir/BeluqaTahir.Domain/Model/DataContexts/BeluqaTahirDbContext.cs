@@ -21,8 +21,9 @@ namespace BeluqaTahir.Domain.Model.DataContexts
         public DbSet<AuditLog> auditLogs { get; set; }
         public DbSet<Accountdetails> accountdetails { get; set; }
         public DbSet<Subscrice> subscrices { get; set; }
+        public DbSet<BlogPostComment> BlogPostComments { get; set; }
 
-
+        
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

@@ -15,6 +15,7 @@ namespace BeluqaTahir.Domain.Model.FormModels
         public string Email { get; set; }
 
         [Required]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
 
 

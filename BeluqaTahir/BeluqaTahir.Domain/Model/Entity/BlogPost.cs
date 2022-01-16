@@ -1,8 +1,10 @@
-﻿using System;
+﻿using BeluqaTahir.Domain.Model.Entity.Membership;
+using System;
+using System.Collections.Generic;
 
 namespace BeluqaTahir.Domain.Model.Entity
 {
-    public class BlogPost:BaseEntity
+    public class BlogPost : BaseEntity
     {
         public string ImagePati { get; set; }
 
@@ -15,6 +17,11 @@ namespace BeluqaTahir.Domain.Model.Entity
         public string ShopDescription { get; set; }
 
         public string Body { get; set; }
+
+        public virtual ICollection<BlogPostComment> Comments { get; set; }
+
+        
+
 
 
     }

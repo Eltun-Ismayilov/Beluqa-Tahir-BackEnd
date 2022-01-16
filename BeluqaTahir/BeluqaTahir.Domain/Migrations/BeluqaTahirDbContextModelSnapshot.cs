@@ -61,6 +61,10 @@ namespace BeluqaTahir.Domain.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CreateByUserId");
+
+                    b.HasIndex("DeleteByUserId");
+
                     b.ToTable("accountdetails");
                 });
 
@@ -115,6 +119,10 @@ namespace BeluqaTahir.Domain.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CreateByUserId");
+
+                    b.HasIndex("DeleteByUserId");
+
                     b.ToTable("auditLogs");
                 });
 
@@ -157,7 +165,52 @@ namespace BeluqaTahir.Domain.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CreateByUserId");
+
+                    b.HasIndex("DeleteByUserId");
+
                     b.ToTable("blogPosts");
+                });
+
+            modelBuilder.Entity("BeluqaTahir.Domain.Model.Entity.BlogPostComment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BlogPostId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Comment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("CreateByUserId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateData")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("DeleteByUserId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("DeleteData")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("ParentId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BlogPostId");
+
+                    b.HasIndex("CreateByUserId");
+
+                    b.HasIndex("DeleteByUserId");
+
+                    b.HasIndex("ParentId");
+
+                    b.ToTable("BlogPostComments");
                 });
 
             modelBuilder.Entity("BeluqaTahir.Domain.Model.Entity.Contact", b =>
@@ -206,6 +259,10 @@ namespace BeluqaTahir.Domain.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CreateByUserId");
+
+                    b.HasIndex("DeleteByUserId");
+
                     b.ToTable("contacts");
                 });
 
@@ -241,6 +298,10 @@ namespace BeluqaTahir.Domain.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CreateByUserId");
+
+                    b.HasIndex("DeleteByUserId");
 
                     b.ToTable("happyClients");
                 });
@@ -487,6 +548,10 @@ namespace BeluqaTahir.Domain.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CreateByUserId");
+
+                    b.HasIndex("DeleteByUserId");
+
                     b.HasIndex("ProductTypesId");
 
                     b.ToTable("products");
@@ -518,6 +583,10 @@ namespace BeluqaTahir.Domain.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CreateByUserId");
+
+                    b.HasIndex("DeleteByUserId");
 
                     b.ToTable("productTypes");
                 });
@@ -552,7 +621,115 @@ namespace BeluqaTahir.Domain.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CreateByUserId");
+
+                    b.HasIndex("DeleteByUserId");
+
                     b.ToTable("subscrices");
+                });
+
+            modelBuilder.Entity("BeluqaTahir.Domain.Model.Entity.Accountdetails", b =>
+                {
+                    b.HasOne("BeluqaTahir.Domain.Model.Entity.Membership.BeluqaUser", "CreateByUser")
+                        .WithMany()
+                        .HasForeignKey("CreateByUserId");
+
+                    b.HasOne("BeluqaTahir.Domain.Model.Entity.Membership.BeluqaUser", "DeleteByUser")
+                        .WithMany()
+                        .HasForeignKey("DeleteByUserId");
+
+                    b.Navigation("CreateByUser");
+
+                    b.Navigation("DeleteByUser");
+                });
+
+            modelBuilder.Entity("BeluqaTahir.Domain.Model.Entity.AuditLog", b =>
+                {
+                    b.HasOne("BeluqaTahir.Domain.Model.Entity.Membership.BeluqaUser", "CreateByUser")
+                        .WithMany()
+                        .HasForeignKey("CreateByUserId");
+
+                    b.HasOne("BeluqaTahir.Domain.Model.Entity.Membership.BeluqaUser", "DeleteByUser")
+                        .WithMany()
+                        .HasForeignKey("DeleteByUserId");
+
+                    b.Navigation("CreateByUser");
+
+                    b.Navigation("DeleteByUser");
+                });
+
+            modelBuilder.Entity("BeluqaTahir.Domain.Model.Entity.BlogPost", b =>
+                {
+                    b.HasOne("BeluqaTahir.Domain.Model.Entity.Membership.BeluqaUser", "CreateByUser")
+                        .WithMany()
+                        .HasForeignKey("CreateByUserId");
+
+                    b.HasOne("BeluqaTahir.Domain.Model.Entity.Membership.BeluqaUser", "DeleteByUser")
+                        .WithMany()
+                        .HasForeignKey("DeleteByUserId");
+
+                    b.Navigation("CreateByUser");
+
+                    b.Navigation("DeleteByUser");
+                });
+
+            modelBuilder.Entity("BeluqaTahir.Domain.Model.Entity.BlogPostComment", b =>
+                {
+                    b.HasOne("BeluqaTahir.Domain.Model.Entity.BlogPost", "BlogPost")
+                        .WithMany("Comments")
+                        .HasForeignKey("BlogPostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BeluqaTahir.Domain.Model.Entity.Membership.BeluqaUser", "CreateByUser")
+                        .WithMany()
+                        .HasForeignKey("CreateByUserId");
+
+                    b.HasOne("BeluqaTahir.Domain.Model.Entity.Membership.BeluqaUser", "DeleteByUser")
+                        .WithMany()
+                        .HasForeignKey("DeleteByUserId");
+
+                    b.HasOne("BeluqaTahir.Domain.Model.Entity.BlogPostComment", "Parent")
+                        .WithMany("Children")
+                        .HasForeignKey("ParentId");
+
+                    b.Navigation("BlogPost");
+
+                    b.Navigation("CreateByUser");
+
+                    b.Navigation("DeleteByUser");
+
+                    b.Navigation("Parent");
+                });
+
+            modelBuilder.Entity("BeluqaTahir.Domain.Model.Entity.Contact", b =>
+                {
+                    b.HasOne("BeluqaTahir.Domain.Model.Entity.Membership.BeluqaUser", "CreateByUser")
+                        .WithMany()
+                        .HasForeignKey("CreateByUserId");
+
+                    b.HasOne("BeluqaTahir.Domain.Model.Entity.Membership.BeluqaUser", "DeleteByUser")
+                        .WithMany()
+                        .HasForeignKey("DeleteByUserId");
+
+                    b.Navigation("CreateByUser");
+
+                    b.Navigation("DeleteByUser");
+                });
+
+            modelBuilder.Entity("BeluqaTahir.Domain.Model.Entity.HappyClients", b =>
+                {
+                    b.HasOne("BeluqaTahir.Domain.Model.Entity.Membership.BeluqaUser", "CreateByUser")
+                        .WithMany()
+                        .HasForeignKey("CreateByUserId");
+
+                    b.HasOne("BeluqaTahir.Domain.Model.Entity.Membership.BeluqaUser", "DeleteByUser")
+                        .WithMany()
+                        .HasForeignKey("DeleteByUserId");
+
+                    b.Navigation("CreateByUser");
+
+                    b.Navigation("DeleteByUser");
                 });
 
             modelBuilder.Entity("BeluqaTahir.Domain.Model.Entity.Membership.BeluqaRoleClaim", b =>
@@ -608,13 +785,65 @@ namespace BeluqaTahir.Domain.Migrations
 
             modelBuilder.Entity("BeluqaTahir.Domain.Model.Entity.Product", b =>
                 {
+                    b.HasOne("BeluqaTahir.Domain.Model.Entity.Membership.BeluqaUser", "CreateByUser")
+                        .WithMany()
+                        .HasForeignKey("CreateByUserId");
+
+                    b.HasOne("BeluqaTahir.Domain.Model.Entity.Membership.BeluqaUser", "DeleteByUser")
+                        .WithMany()
+                        .HasForeignKey("DeleteByUserId");
+
                     b.HasOne("BeluqaTahir.Domain.Model.Entity.ProductTypes", "ProductTypes")
                         .WithMany("Products")
                         .HasForeignKey("ProductTypesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("CreateByUser");
+
+                    b.Navigation("DeleteByUser");
+
                     b.Navigation("ProductTypes");
+                });
+
+            modelBuilder.Entity("BeluqaTahir.Domain.Model.Entity.ProductTypes", b =>
+                {
+                    b.HasOne("BeluqaTahir.Domain.Model.Entity.Membership.BeluqaUser", "CreateByUser")
+                        .WithMany()
+                        .HasForeignKey("CreateByUserId");
+
+                    b.HasOne("BeluqaTahir.Domain.Model.Entity.Membership.BeluqaUser", "DeleteByUser")
+                        .WithMany()
+                        .HasForeignKey("DeleteByUserId");
+
+                    b.Navigation("CreateByUser");
+
+                    b.Navigation("DeleteByUser");
+                });
+
+            modelBuilder.Entity("BeluqaTahir.Domain.Model.Entity.Subscrice", b =>
+                {
+                    b.HasOne("BeluqaTahir.Domain.Model.Entity.Membership.BeluqaUser", "CreateByUser")
+                        .WithMany()
+                        .HasForeignKey("CreateByUserId");
+
+                    b.HasOne("BeluqaTahir.Domain.Model.Entity.Membership.BeluqaUser", "DeleteByUser")
+                        .WithMany()
+                        .HasForeignKey("DeleteByUserId");
+
+                    b.Navigation("CreateByUser");
+
+                    b.Navigation("DeleteByUser");
+                });
+
+            modelBuilder.Entity("BeluqaTahir.Domain.Model.Entity.BlogPost", b =>
+                {
+                    b.Navigation("Comments");
+                });
+
+            modelBuilder.Entity("BeluqaTahir.Domain.Model.Entity.BlogPostComment", b =>
+                {
+                    b.Navigation("Children");
                 });
 
             modelBuilder.Entity("BeluqaTahir.Domain.Model.Entity.ProductTypes", b =>

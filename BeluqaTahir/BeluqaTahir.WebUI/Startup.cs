@@ -111,7 +111,7 @@ namespace BeluqaTahir.WebUI
             }
 
             app.UseStaticFiles();
-            //app.SeedMembership();
+           // app.SeedMembership();
             app.UseRouting();
 
 

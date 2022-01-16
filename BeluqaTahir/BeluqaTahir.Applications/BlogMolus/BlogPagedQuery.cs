@@ -2,6 +2,7 @@
 using BeluqaTahir.Domain.Model.Entity;
 using BeluqaTahir.Domain.Model.ViewModels;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,7 @@ namespace BeluqaTahir.Applications.BlogMolus
             }
             public async Task<PagedViewModel<BlogPost>> Handle(BlogPagedQuery model, CancellationToken cancellationToken)
             {
-                var query = db.blogPosts.Where(b => b.CreateByUserId == null && b.DeleteByUserId == null).AsQueryable(); // silinmemisleri getirir
+                var query = db.blogPosts.Include(b=>b.CreateByUser).Where(b =>  b.DeleteByUserId == null).AsQueryable(); // silinmemisleri getirir
 
                 //int queryCount = await query.CountAsync(cancellationToken); // silinmemislerin sayni takir
 

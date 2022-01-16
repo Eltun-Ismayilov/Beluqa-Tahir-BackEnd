@@ -115,7 +115,7 @@ namespace BeluqaTahir.WebUI.Controllers
 
 
 
-            var mailSended = configuration.SendEmail(user.Email, "Riode seyfesi gagas", $"Zehmet olmasa <a href={path}>Link</a> vasitesile abuneliyi tamamlayin");
+            var mailSended = configuration.SendEmail(user.Email, "BeluqaTahir", $"Zehmet olmasa <a href={path}>Link</a> vasitesile abuneliyi tamamlayin");
 
 
             var person = await userManager.FindByNameAsync(user.UserName);
@@ -300,7 +300,7 @@ namespace BeluqaTahir.WebUI.Controllers
 
 
 
-                var mailSended = configuration.SendEmail(model.Email, "Riode seyfesi gagas", $"Siz yeni melumatlardan xederdar olacaqsiniz");
+                var mailSended = configuration.SendEmail(model.Email, "BeluqaTahir", $"Siz yeni melumatlardan xederdar olacaqsiniz");
                 if (mailSended == false)
                 {
                     bt.Database.RollbackTransaction();

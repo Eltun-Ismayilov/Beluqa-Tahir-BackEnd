@@ -1,6 +1,5 @@
 ﻿@model ShopViewModel
 
-
 @{
     ViewData["Title"] = "Index";
 }
@@ -281,10 +280,9 @@
 
             var storedJson = $.cookie('basket');
 
-            if (storedJson != undefined && typeof storedJson == 'string')
-            {
+            if (storedJson != undefined && typeof storedJson == 'string') {
                 arr = JSON.parse(storedJson);
-               // console.log(arr);
+                // console.log(arr);
             };
 
             var found = arr.filter(item => {
@@ -300,8 +298,7 @@
 
 
             }
-            else
-            {
+            else {
                 found.count = found.count + 1;
             }
 
