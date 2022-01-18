@@ -143,6 +143,20 @@ namespace BeluqaTahir.WebUI
             app.UseEndpoints(cfg =>
             {
 
+                cfg.MapControllerRoute(
+
+                    name: "Default-signin",
+                    pattern: "accessdenied.html",
+                    defaults: new
+                    {
+                        areas = "",
+                        controller = "Home",
+                        action = "accessdenied"
+                    });
+
+
+
+
 
                 cfg.MapControllerRoute("adminsingin", "admin/singin.html",
                  defaults: new

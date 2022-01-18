@@ -354,5 +354,13 @@ namespace BeluqaTahir.WebUI.Controllers
         }
 
 
+        public IActionResult Accessdenied()
+        {
+            return View();
+        }
+
+
+        
+
     }
 }
