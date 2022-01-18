@@ -41,6 +41,7 @@ namespace BeluqaTahir.WebUI.Controllers
             return View(respons);
         }
 
+
         public async Task<IActionResult> ShoppingCard()
         {
 

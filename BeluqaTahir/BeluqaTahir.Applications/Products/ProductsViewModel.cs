@@ -8,7 +8,7 @@ namespace BeluqaTahir.Applications.Products
         public int? Id { get; set; }
 
         public string Name { get; set; }
-        public string Price { get; set; }
+        public int Price { get; set; }
         public string Description { get; set; }
         public string FullName { get; set; }
         public string ShopDescription { get; set; }

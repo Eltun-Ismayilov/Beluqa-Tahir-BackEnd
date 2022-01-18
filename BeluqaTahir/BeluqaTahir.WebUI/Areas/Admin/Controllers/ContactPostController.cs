@@ -1,7 +1,9 @@
-﻿using BeluqaTahir.Domain.Model.DataContexts;
+﻿using BeluqaTahir.Applications.Core.Extension;
+using BeluqaTahir.Domain.Model.DataContexts;
 using BeluqaTahir.Domain.Model.Entity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +15,12 @@ namespace BeluqaTahir.WebUI.Areas.Admin.Controllers
     public class ContactPostController : Controller
     {
         private readonly BeluqaTahirDbContext db;
-        public ContactPostController(BeluqaTahirDbContext db)
+        readonly IConfiguration configuration;
+
+        public ContactPostController(BeluqaTahirDbContext db, IConfiguration configuration)
         {
             this.db = db;
+            this.configuration = configuration;
         }
 
         public async Task<IActionResult> Index(int typeId)
@@ -81,6 +86,18 @@ namespace BeluqaTahir.WebUI.Areas.Admin.Controllers
             contactPost.Answer = model.Answer;
             contactPost.AnswerdData = DateTime.Now;
             contactPost.AnswerByUserId = 1;
+
+            string token = $"subscribetoken-{model.Id}-{DateTime.Now:yyyyMMddHHmmss}"; // token yeni id goturuk
+
+            token = token.Encrypt("");
+
+            string path = $"{Request.Scheme}://{Request.Host}/subscribe-confirm?token={token}"; // path duzeldirik
+
+
+
+            var mailSended = configuration.SendEmail(contactPost.Email, "BeluqaTahir", $"Sorguvuza cvb olara  `{model.Answer}` ");
+
+
             await db.SaveChangesAsync();
             return Redirect(nameof(Index));
         }

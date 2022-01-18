@@ -44,14 +44,17 @@
 
 <dd class="col-4 " id="form-answer" style="display:none">
     <form method="post" asp-action="Answer">
-        <textarea name="Answer" class="form-control" placeholder="birseyler yazin"></textarea>
+        <textarea name="Answer" class="form-control" placeholder="birseyler yazin">
+
+</textarea>
+
         <input type="hidden" asp-for="Id" />
         <button class="btn btn-primary">Cavabla</button>
     </form>
 </dd>
 <div>
     <a style="margin-left:16px;" class="btn btn-outline-dark" asp-action="Index">Back to List</a>
-    <a  class="btn btn-primary" id="btnReply">Reply</a>
+    <a class="btn btn-primary" id="btnReply">Reply</a>
 </div>
 
 @section addjs{
