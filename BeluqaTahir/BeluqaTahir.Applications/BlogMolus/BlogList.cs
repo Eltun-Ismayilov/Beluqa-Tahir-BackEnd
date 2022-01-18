@@ -27,7 +27,7 @@ namespace BeluqaTahir.Applications.BlogMolus
                     .Include(m => m.CreateByUser)
                     .Include(m => m.Comments)
                     .ThenInclude(m => m.CreateByUser)
-                     .Include(m => m.Comments)
+                    .Include(m => m.Comments)
                     .ThenInclude(m => m.Children)
                     .FirstOrDefaultAsync(m => m.Id == model.Id, cancellationToken);
 

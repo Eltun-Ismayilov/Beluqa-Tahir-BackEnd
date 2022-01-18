@@ -180,7 +180,11 @@
                                     <h4>
                                         <a href="#">
 
-                                            @item.CreateByUser?.UserName
+                                            @if (User.Identity.IsAuthenticated)
+                                            {
+                                                @User.Identity.Name.ToUpper()
+                                            }
+                                           
 
 
                                         </a>
@@ -209,19 +213,23 @@
                                 <div style="margin-top:-60px" class="comment-body">
                                     <div class="comment-user">
                                                    <h4>
-                                            <a style="margin-left:25px" href="#">
+                                                       <a style="margin-left:25px" href="#">
 
 
-                                                @item.CreateByUser?.UserName
 
-                                            </a>
+                                                           @if (User.Identity.IsAuthenticated)
+                                                           {
+                                                               @User.Identity.Name.ToUpper()
+                                                           }
+
+                                                       </a>
                                         </h4>
                                         <span style="display:inline-block;color:#b7472a;margin-left:26px" class="comment-date">@subComment.CreateData.ToShortDateString()</span>
                              
                                     </div>
 
                                     <div class="comment-content mb-2">
-                                        <a style="margin-left:26px" href="#c-@subComment.ParentId">@@@($"{subComment.Parent.CreateByUser?.UserName}")</a> &nbsp; &nbsp;
+                                       @* <a style="margin-left:26px" href="#c-@subComment.ParentId">@@@($"{subComment.Parent.CreateByUser?.UserName}")</a> &nbsp; &nbsp;*@
                                         <p style="margin-top:7px;margin-left:28px">
                                             @subComment.Comment
                                         </p>
@@ -238,22 +246,18 @@
                 </ul>
             </div>
 
-            <!-- End Comments -->
+         
             <div class="reply">
                 <form method="post" id="replyForm">
                     <div id="replyToComment"></div>
                     <input type="hidden" name="postId" value="@Model.BlogPosts.Id" />
-                    <textarea style="border:1px solid beige;display:inline-block;margin-top:115px" name="comment" cols="30" rows="6" class="form-control mb-4"
+                    <textarea id="fakk" style="border:1px solid beige;display:inline-block;margin-top:115px" name="comment" cols="30" rows="6" class="form-control mb-4"
                               placeholder="Comment *" required></textarea>
-                    <button style="margin-top:10px" type="submit" class="btn btn-primary btn-rounded">
+                    <button  style="margin-top:10px" type="submit" class="btn btn-primary btn-rounded">
                         POST COMMENT<i class="d-icon-arrow-right"></i>
                     </button>
                 </form>
             </div>
-            <!-- End Reply -->
-
-
-
         </div>
 
 

@@ -33,7 +33,6 @@ namespace BeluqaTahir.WebUI.Controllers
 
         }
 
-        [AllowAnonymous]
         public async Task<IActionResult> Details(BlogList query)
         {
 
@@ -81,7 +80,7 @@ namespace BeluqaTahir.WebUI.Controllers
             {
                 ParentId = commentId,
                 BlogPostId = postId,
-                Comment = comment
+                Comment = comment,
                 //,CreatedByUserId= User.GetCurrentUserId()
             };
             if (commentId.HasValue && await bt.BlogPostComments.AnyAsync(c => c.Id == commentId))

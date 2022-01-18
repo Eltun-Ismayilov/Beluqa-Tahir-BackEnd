@@ -39,7 +39,6 @@ namespace BeluqaTahir.WebUI.Controllers
         {
             return View();
         }
-
         public async Task<IActionResult> About(AboutPagedQuery query)
         {
 
@@ -47,28 +46,18 @@ namespace BeluqaTahir.WebUI.Controllers
 
             return View(respons);
         }
-
         [HttpGet]
-        //+
         public IActionResult Contact()
         {
             return View();
         }
-
         [HttpPost]
-        //[ValidateAntiForgeryToken]
-        //+
         public async Task<IActionResult> Contact(ContactCreateCommand query)
         {
 
             var respons = await db.Send(query);
             return Json(respons);
         }
-
-
-
-
-
         [HttpGet]
         public IActionResult Register()
         {
@@ -80,7 +69,6 @@ namespace BeluqaTahir.WebUI.Controllers
             }
             return View();
         }
-
         [HttpPost]
         public async Task<IActionResult> Register(RegisterFormModel register)
         {
@@ -154,7 +142,6 @@ namespace BeluqaTahir.WebUI.Controllers
             return null;
 
         }
-
         public IActionResult Signin()
         {
             //Eger giris edibse routda myaccount/sing yazanda o seyfe acilmasin homa tulaasin
@@ -166,7 +153,6 @@ namespace BeluqaTahir.WebUI.Controllers
 
             return View();
         }
-
         [HttpPost]
         public async Task<IActionResult> Signin(LoginFormModel user)
         {
@@ -248,8 +234,6 @@ namespace BeluqaTahir.WebUI.Controllers
             ViewBag.Ms = "Melumatlari doldur gagas";
             return View(user);
         }
-
-
         public async Task<IActionResult> Logout()
         {
 
@@ -257,7 +241,6 @@ namespace BeluqaTahir.WebUI.Controllers
             return RedirectToAction(nameof(Signin));
 
         }
-     
         [HttpPost]
         [Route("/Subscrice.html")]
         public IActionResult Subscrice([Bind("Email")] Subscrice model)
@@ -369,5 +352,7 @@ namespace BeluqaTahir.WebUI.Controllers
         end:
             return View();
         }
+
+
     }
 }
