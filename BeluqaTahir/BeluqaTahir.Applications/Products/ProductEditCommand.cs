@@ -55,7 +55,7 @@ namespace BeluqaTahir.Applications.Products
                     entity.Description = request.Description;
                     entity.FullName = request.FullName;
                     entity.ShopDescription = request.ShopDescription;
-                    entity.ProductTypes = request.ProductTypes;
+                    entity.ProductTypesId = request.ProductTypesId;
                     entity.ImagePati = request.ImagePati;
 
 

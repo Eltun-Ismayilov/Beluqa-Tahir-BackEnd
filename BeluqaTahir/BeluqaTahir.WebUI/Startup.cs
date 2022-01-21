@@ -112,10 +112,10 @@ namespace BeluqaTahir.WebUI
 
             app.UseStaticFiles();
            
-            app.SeedMembership();
+         //   app.SeedMembership();
             app.UseRouting();
 
-
+            
             app.Use(async (context, next) =>
             {
                 if (!context.Request.Cookies.ContainsKey("riode")
