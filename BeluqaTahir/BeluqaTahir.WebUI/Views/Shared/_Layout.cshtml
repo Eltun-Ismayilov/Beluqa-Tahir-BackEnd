@@ -36,7 +36,7 @@
 
     <title>BeluqaTahir.com</title>
 
-    @RenderSection("addcss", required: false);
+    @RenderSection("addcss", required: false)
 
     <link href="~/libs/toastr.js/toastr.css" rel="stylesheet" />
 
@@ -267,15 +267,15 @@
     success: function (gelenData) {
     console.log(gelenData);
         if (gelenData.error == false) {
-        toastr.success(gelenData.massege, 'ugurludur');
+            toastr.success(gelenData.massege, 'Successfully');
     e.currentTarget.reset(); // FORM BOSALDIR
     } else {
-        toastr.error(gelenData.massege, 'xeta');
+        toastr.error(gelenData.massege, 'Error');
     }
     },
     error: function (gelenData) {
     console.log(gelenData);
-    toastr.success('Teyin olunmamis xeta bas verib', 'Error');
+    toastr.error('Teyin olunmamis xeta bas verib', 'Error');
     },
     });
     });
@@ -298,6 +298,6 @@
     });
     </script>
 
-    @RenderSection("addjs", required: false);
+    @RenderSection("addjs", required: false)
 </body>
 </html>

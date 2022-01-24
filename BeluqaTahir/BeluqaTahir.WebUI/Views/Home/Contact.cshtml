@@ -4,7 +4,7 @@
 }
 
 
-<div class="site-navbar-wrap">
+<div  class="site-navbar-wrap">
     <div class="site-navbar-top">
         <div class="container py-3">
             <div class="row align-items-center">
@@ -204,7 +204,7 @@
                                                 <label style="color: #b7472a;" class="label" for="name">Name</label>
                                                 <input asp-for="Name"
                                                        data-rule-required="true"
-                                                       data-msg-required="Bosh buraxmayin"
+                                                       data-msg-required="Name is required"
                                                        class="form-control"
                                                        placeholder="Name">
                                             </div>
@@ -214,9 +214,9 @@
                                                 <label style="color: #b7472a;" class="label" for="email">Email Address</label>
                                                 <input asp-for="Email"
                                                        data-rule-required="true"
-                                                       data-msg-required="Bosh buraxmayin"
+                                                       data-msg-required="Email is required"
                                                        data-rule-email="true"
-                                                       data-msg-email="Email daxil edin"
+                                                       data-msg-email="Email must be in mail format"
                                                        class="form-control"
                                                        placeholder="Email">
                                             </div>
@@ -226,7 +226,7 @@
                                                 <label style="color: #b7472a;" class="label" for="subject">Subject</label>
                                                 <input asp-for="Subject"
                                                        data-rule-required="true"
-                                                       data-msg-required="Bosh buraxmayin"
+                                                       data-msg-required="Subject is required"
                                                        class="form-control"
                                                        placeholder="Subject">
                                             </div>
@@ -236,7 +236,7 @@
                                                 <label style="color: #b7472a;" class="label" for="#">Message</label>
                                                 <textarea asp-for="Content"
                                                           data-rule-required="true"
-                                                          data-msg-required="Bosh buraxmayin"
+                                                          data-msg-required="Message is required"
                                                           class="form-control"
                                                           cols="30"
                                                           rows="4"
@@ -246,7 +246,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 @*<input type="button" value="Send Message" class="btn bbn btn-primary">*@
-                                                <button type="submit" class="btn bbn btn-primary">send mee gagas</button>
+                                                <button type="submit" class="btn bbn btn-primary">Send Me</button>
 
                                             </div>
                                         </div>
@@ -338,7 +338,7 @@
                         console.log(gelenData);
 
                         if (gelenData.error == false) {
-                            toastr.success(gelenData.message, 'ugurludur');
+                            toastr.success(gelenData.message, 'Successful');
                             e.currentTarget.reset(); // FORM BOSALDIR
                             $(e.currentTarget).find('.is-invalid').removeClass('is-invalid');
                             $(e.currentTarget).find('.is-valid').removeClass('is-valid');
@@ -346,13 +346,13 @@
 
 
                         } else {
-                            toastr.error(gelenData.message, 'xeta');
+                            toastr.error(gelenData.message, 'Error');
 
                         }
                 },
                 error: function (gelenData) {
                         console.log(gelenData);
-                        toastr.success('Teyin olunmamis xeta bas verib', 'Error');
+                        toastr.error('Unknown error', 'Error');
 
                 },
 

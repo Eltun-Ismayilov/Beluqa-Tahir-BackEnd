@@ -5,6 +5,8 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace BeluqaTahir.WebUI.Controllers
@@ -81,7 +83,7 @@ namespace BeluqaTahir.WebUI.Controllers
                 ParentId = commentId,
                 BlogPostId = postId,
                 Comment = comment,
-                //,CreatedByUserId= User.GetCurrentUserId()
+                CreateByUserId= Int32.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value)
             };
             if (commentId.HasValue && await bt.BlogPostComments.AnyAsync(c => c.Id == commentId))
                 commentModel.ParentId = commentId;

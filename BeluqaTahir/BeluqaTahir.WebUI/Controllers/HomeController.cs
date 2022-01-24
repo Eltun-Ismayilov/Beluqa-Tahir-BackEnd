@@ -181,14 +181,14 @@ namespace BeluqaTahir.WebUI.Controllers
 
                 if (founderUser == null) //Eger login ola bilmirse gonderir view gonderir yeni isdifadeci tapilmiyanda
                 {
-                    ViewBag.Ms = "Isdifadeci sifresi ve parol sefdir gagas";
+                    ViewBag.Ms = "Your Email and Password IsInvalid";
                     return View(user);
 
                 }
 
                 if (founderUser.EmailConfirmed == false)
                 {
-                    ViewBag.Ms = "Zehmet olmasa Emailinizi testiq edin....";
+                    ViewBag.Ms = "Place confirmed your Email";
                     return View(user);
                 }
 
@@ -196,7 +196,7 @@ namespace BeluqaTahir.WebUI.Controllers
 
                 if (!await userManager.IsInRoleAsync(founderUser, "User"))
                 {
-                    ViewBag.Ms = "Isdifadeci sifresi ve parol sefdir gagas";
+                    ViewBag.Ms = "Your Email and Password IsInvalid";
                     return View(user);
                 }
 
@@ -215,7 +215,7 @@ namespace BeluqaTahir.WebUI.Controllers
 
                     if (sRuselt.Succeeded != true) // Eger giriw zamani ugurlu deyilse yeni gire bilmirse 
                     {
-                        ViewBag.Ms = "Isdifadeci sifresi ve parol sefdir gagas";
+                        ViewBag.Ms = "Your Email and Password IsInvalid";
                         return View(user);
 
                     }
@@ -231,7 +231,7 @@ namespace BeluqaTahir.WebUI.Controllers
                 }
             }
 
-            ViewBag.Ms = "Melumatlari doldur gagas";
+            ViewBag.Ms = "Email and Password is required";
             return View(user);
         }
         public async Task<IActionResult> Logout()
@@ -255,7 +255,7 @@ namespace BeluqaTahir.WebUI.Controllers
                     {
 
                         error = true,
-                        massege = "Bu E-Mail evvelceden qeydiyyati edilib"
+                        massege = "This email is already in our database!"
 
                     });
                 }
@@ -265,7 +265,7 @@ namespace BeluqaTahir.WebUI.Controllers
                     {
 
                         error = true,
-                        massege = "Bu E-Mail evvelceden qeydiyyati edilib "
+                        massege = "This email is already in our database!"
 
                     });
                 }
@@ -291,7 +291,7 @@ namespace BeluqaTahir.WebUI.Controllers
                     return Json(new
                     {
                         error = false,
-                        massege = "Email-gonderilmasi zamini xeta bas verdi!"
+                        massege = "This email is already in our database!"
 
                     });
                 }
@@ -300,7 +300,7 @@ namespace BeluqaTahir.WebUI.Controllers
                 {
 
                     error = false,
-                    massege = "Sorgunuz ugurla qeyde alindi!!"
+                    massege = "Your request was successfully accepted!"
 
                 });
             }
@@ -311,7 +311,7 @@ namespace BeluqaTahir.WebUI.Controllers
             {
 
                 error = true,
-                massege = "Sorgunuzun Icrasi zamani xeta yarandi,Zehmet olmasa yeniden yoxlayin"
+                massege = "This email is already in our database!"
 
             });
         }
@@ -335,18 +335,18 @@ namespace BeluqaTahir.WebUI.Controllers
 
                 if (subsc == null)
                 {
-                    ViewBag.ms = Tuple.Create(true, "Token xetasi");
+                    ViewBag.ms = Tuple.Create(true, "Token error");
                     goto end;
                 }
                 if (subsc.EmailConfirmed == true)
                 {
-                    ViewBag.ms = Tuple.Create(true, "Artiq tesdiq edildi");
+                    ViewBag.ms = Tuple.Create(true, "Your email is already confirmed");
                     goto end;
                 }
                 subsc.EmailConfirmed = true;
                 bt.SaveChanges();
 
-                ViewBag.ms = Tuple.Create(false, "Abuneliyiniz tesdiq edildi");
+                ViewBag.ms = Tuple.Create(false, "Your email is confirmed");
 
             }
         end:
