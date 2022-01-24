@@ -352,15 +352,10 @@ namespace BeluqaTahir.WebUI.Controllers
         end:
             return View();
         }
-
-
         public IActionResult Accessdenied()
         {
             return View();
         }
-
-
-        
 
     }
 }

@@ -6,32 +6,88 @@
 }
 
 
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Login 10</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/LoginAdmin/css/StyleSheet.css" rel="stylesheet" />
+    <script>
+    (function (w, d) {
+            !function (a, e, t, r, z) {
+                a.zarazData = a.zarazData || {}, a.zarazData.executed = [], a.zarazData.tracks = [], a.zaraz = { deferred: [] }; var s = e.getElementsByTagName("title")[0]; a.zarazData.c = e.cookie, s && (a.zarazData.t = e.getElementsByTagName("title")[0].text), a.zarazData.w = a.screen.width, a.zarazData.h = a.screen.height, a.zarazData.j = a.innerHeight, a.zarazData.e = a.innerWidth, a.zarazData.l = a.location.href, a.zarazData.r = e.referrer, a.zarazData.k = a.screen.colorDepth, a.zarazData.n = e.characterSet, a.zarazData.o = (new Date).getTimezoneOffset(),//
+                    a.dataLayer = a.dataLayer || [], a.zaraz.track = (e, t) => { for (key in a.zarazData.tracks.push(e), t) a.zarazData["z_" + key] = t[key] }, a.zaraz._preSet = [], a.zaraz.set = (e, t, r) => { a.zarazData["z_" + e] = t, a.zaraz._preSet.push([e, t, r]) }, a.dataLayer.push({ "zaraz.start": (new Date).getTime() }), a.addEventListener("DOMContentLoaded", (() => { var t = e.getElementsByTagName(r)[0], z = e.createElement(r); z.defer = !0, z.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(a.zarazData))), t.parentNode.insertBefore(z, t) }))
+            }(w, d, 0, "script");
+        })(window, document);</script>
+  
+</head>
+<body class="img js-fullheight" style="background-image: url(https://preview.colorlib.com/theme/bootstrap/login-form-20/images/xbg.jpg.pagespeed.ic.tiVxeakBSd.webp)">
+    <section class="ftco-section">
+        <div class="container">
+            
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div style="margin-top:50px" class="login-wrap p-0">
+                        <h3 class="mb-4 text-center">Have an account?</h3>
+                        <form  method="post"  class="signin-form">
+                            <div class="form-group">
+                                <input asp-for="UserName" class="form-control" placeholder="Username" required>
+                            </div>
+                            <div class="form-group">
+                                <input id="password-field" asp-for="Password" class="form-control" placeholder="Password" required>
+                                <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
+                            </div>
+                           
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="js/jquery.min.js"></script>
+    <script src="~/LoginAdmin/js/main.js"></script>
+    <script>eval(mod_pagespeed_T07FyiNNgg);</script>
+    <script>eval(mod_pagespeed_zB8NXha7lA);</script>
+    <script>eval(mod_pagespeed_xfgCyuItiV);</script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"6d274532589c8ec8","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.12.0","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>
 
-<!DOCTYPE html>
+
+
+
+
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Login V16</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <link rel="stylesheet" type="text/css" href="~/LoginAdmin/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="~/LoginAdmin/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" type="text/css" href="~/LoginAdmin/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-    
+
     <link rel="stylesheet" type="text/css" href="~/LoginAdmin/vendor/animate/animate.css">
- 
+
     <link rel="stylesheet" type="text/css" href="~/LoginAdmin/vendor/css-hamburgers/hamburgers.min.css">
 
     <link rel="stylesheet" type="text/css" href="~/LoginAdmin/vendor/animsition/css/animsition.min.css">
-    
+
     <link rel="stylesheet" type="text/css" href="~/LoginAdmin/vendor/select2/select2.min.css">
-  
+
     <link rel="stylesheet" type="text/css" href="~/LoginAdmin/vendor/daterangepicker/daterangepicker.css">
-  
+
     <link rel="stylesheet" type="text/css" href="~/LoginAdmin/css/util.css">
     <link rel="stylesheet" type="text/css" href="~/LoginAdmin/css/main.css">
-   
+
 </head>
 <body>
 
@@ -69,23 +125,21 @@
     <div id="dropDownSelect1"></div>
 
 
-    <script src="~/LoginAdmin/vendor/jquery/jquery-3.2.1.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/LoginAdmin/vendor/animsition/js/animsition.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/LoginAdmin/vendor/bootstrap/js/popper.js"></script>
-    <script src="~/LoginAdmin/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/LoginAdmin/vendor/select2/select2.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/LoginAdmin/vendor/daterangepicker/moment.min.js"></script>
-    <script src="~/LoginAdmin/vendor/daterangepicker/daterangepicker.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/LoginAdmin/vendor/countdowntime/countdowntime.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/LoginAdmin/js/main.js"></script>
+    <script src="~/LoginAdmin/vendor/jquery/jquery-3.2.1.min.js"></script>-->
+<!--===============================================================================================-->
+<!--<script src="~/LoginAdmin/vendor/animsition/js/animsition.min.js"></script>-->
+<!--===============================================================================================-->
+<!--<script src="~/LoginAdmin/vendor/bootstrap/js/popper.js"></script>
+<script src="~/LoginAdmin/vendor/bootstrap/js/bootstrap.min.js"></script>-->
+<!--===============================================================================================-->
+<!--<script src="~/LoginAdmin/vendor/select2/select2.min.js"></script>-->
+<!--===============================================================================================-->
+<!--<script src="~/LoginAdmin/vendor/daterangepicker/moment.min.js"></script>
+<script src="~/LoginAdmin/vendor/daterangepicker/daterangepicker.js"></script>-->
+<!--===============================================================================================-->
+<!--<script src="~/LoginAdmin/vendor/countdowntime/countdowntime.js"></script>-->
+<!--===============================================================================================-->
+<!--<script src="~/LoginAdmin/js/main.js"></script>
 
 </body>
-</html>
-
-
+</html>-->
