@@ -31,13 +31,35 @@ namespace BeluqaTahir.WebUI.Controllers
         public async Task<IActionResult> Index(ShopList query)
         {
             var respons = await db.Send(query);
+             Request.Cookies.TryGetValue("basket", out string basketJson1);
+            if (basketJson1?.Length>0)
+            {
+                string[] arr = basketJson1.Split(',');
+                ViewBag.ms = arr.Length / 2;
+            }
+            else
+            {
+                ViewBag.ms = 0;
+            }
+          
+
+
             return View(respons);
         }
 
         public async Task<IActionResult> Details(ShopSingleQuery query )
         {
             var respons = await db.Send(query);
-
+            Request.Cookies.TryGetValue("basket", out string basketJson1);
+            if (basketJson1?.Length > 0)
+            {
+                string[] arr = basketJson1.Split(',');
+                ViewBag.ms = arr.Length / 2;
+            }
+            else
+            {
+                ViewBag.ms = 0;
+            }
             return View(respons);
         }
 
@@ -47,6 +69,16 @@ namespace BeluqaTahir.WebUI.Controllers
 
             if (Request.Cookies.TryGetValue("basket", out string basketJson))
             {
+                Request.Cookies.TryGetValue("basket", out string basketJson1);
+                if (basketJson1?.Length > 0)
+                {
+                    string[] arr = basketJson1.Split(',');
+                    ViewBag.ms = arr.Length / 2;
+                }
+                else
+                {
+                    ViewBag.ms = 0;
+                }
                 var data = JsonConvert.DeserializeObject<List<BasketViewModel>>(basketJson);
 
                 foreach (var item in data)

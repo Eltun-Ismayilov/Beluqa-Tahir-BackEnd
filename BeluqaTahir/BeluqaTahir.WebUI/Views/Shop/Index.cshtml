@@ -1,10 +1,13 @@
 ﻿@model ShopViewModel
 
+
+@inject BeluqaTahirDbContext db
 @{
     ViewData["Title"] = "Index";
-}
+    var count = db.blogPosts.Select(x => x.Comments).Count();
 
-<div  class="site-navbar-wrap">
+}
+<div class="site-navbar-wrap">
     <div class="site-navbar-top">
         <div class="container py-3">
             <div class="row align-items-center">
@@ -52,7 +55,7 @@
             <div class="row align-items-center">
                 <div class="col-2">
                     <h1 class="my-0 site-logo">
-                        <a class="LIQUOR" href="index.html">LIQUOR STORE</a>
+                        <a class="LIQUOR" asp-controller="home" asp-action="Index">LIQUOR STORE</a>
                     </h1>
                 </div>
                 <div class="col-10">
@@ -81,7 +84,7 @@
                                 <li>
                                     <a asp-controller="Shop" asp-action="ShoppingCard" class="nav-link">
                                         <span><i class="fas fa-shopping-basket"></i></span>
-                                        <sup>2</sup>
+                                        <sup>@ViewBag.ms</sup>
                                     </a>
                                 </li>
 
@@ -306,6 +309,7 @@
             var jsonStrinfy = JSON.stringify(arr);
 
             $.cookie('basket', jsonStrinfy, { expires: 7, path: '' });
+            window.location.reload()
 
 
         }

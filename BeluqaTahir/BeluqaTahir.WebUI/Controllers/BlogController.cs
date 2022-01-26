@@ -28,7 +28,16 @@ namespace BeluqaTahir.WebUI.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Index(BlogPagedQuery query)
         {
-
+            Request.Cookies.TryGetValue("basket", out string basketJson1);
+            if (basketJson1?.Length > 0)
+            {
+                string[] arr = basketJson1.Split(',');
+                ViewBag.ms = arr.Length / 2;
+            }
+            else
+            {
+                ViewBag.ms = 0;
+            }
             var respons = await db.Send(query);
 
             return View(respons);
@@ -37,7 +46,16 @@ namespace BeluqaTahir.WebUI.Controllers
 
         public async Task<IActionResult> Details(BlogList query)
         {
-
+            Request.Cookies.TryGetValue("basket", out string basketJson1);
+            if (basketJson1?.Length > 0)
+            {
+                string[] arr = basketJson1.Split(',');
+                ViewBag.ms = arr.Length / 2;
+            }
+            else
+            {
+                ViewBag.ms = 0;
+            }
             var respons = await db.Send(query);
 
             return View(respons);

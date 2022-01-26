@@ -1,11 +1,15 @@
 ﻿@model Product
+
+@inject BeluqaTahirDbContext db
 @{
     ViewData["Title"] = "Details";
+    var count = db.blogPosts.Select(x=>x.Comments).Count();
+
 }
 
 
 
-<div  class="site-navbar-wrap">
+<div class="site-navbar-wrap">
     <div class="site-navbar-top">
         <div class="container py-3">
             <div class="row align-items-center">
@@ -53,7 +57,7 @@
             <div class="row align-items-center">
                 <div class="col-2">
                     <h1 class="my-0 site-logo">
-                        <a class="LIQUOR" href="index.html">LIQUOR STORE</a>
+                        <a class="LIQUOR" asp-controller="home" asp-action="Index">LIQUOR STORE</a>
                     </h1>
                 </div>
                 <div class="col-10">
@@ -72,7 +76,7 @@
                                 <li class="active">
                                     <a asp-controller="Shop" asp-action="Index" class="nav-link">Product</a>
                                 </li>
-                                <li >
+                                <li>
                                     <a asp-controller="Blog" asp-action="Index" class="nav-link">Blog</a>
                                 </li>
                                 <li>
@@ -80,9 +84,9 @@
                                 </li>
 
                                 <li>
-                                    <a href="#contact-section" class="nav-link">
+                                    <a asp-controller="Shop" asp-action="ShoppingCard" class="nav-link">
                                         <span><i class="fas fa-shopping-basket"></i></span>
-                                        <sup>3</sup>
+                                        <sup>@ViewBag.ms</sup>
                                     </a>
                                 </li>
 

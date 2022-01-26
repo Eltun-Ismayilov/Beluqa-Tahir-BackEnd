@@ -51,7 +51,7 @@ namespace BeluqaTahir.WebUI.Areas.Admin.Controllers
 
                 if (founderUser == null) //Eger login ola bilmirse gonderir view gonderir yeni isdifadeci tapilmiyanda
                 {
-                    ViewBag.Ms = "Isdifadeci sifresi ve parol sefdir gagas";
+                    ViewBag.Ms = "Your Email and Password IsInvalid";
                     return View(user);
 
                 }
@@ -65,7 +65,7 @@ namespace BeluqaTahir.WebUI.Areas.Admin.Controllers
                 if (hasAnotherRole == false) //Adamin tekce user rolu varsa
                 {
 
-                    ViewBag.Ms = "Isdifadeci sifresi ve parol sefdir gagas";
+                    ViewBag.Ms = "Your Email and Password IsInvalid";
                     return View(user);
                 }
 
@@ -78,13 +78,13 @@ namespace BeluqaTahir.WebUI.Areas.Admin.Controllers
 
                 if (sRuselt.Succeeded != true) // Eger giriw zamani ugurlu deyilse yeni gire bilmirse 5
                 {
-                    ViewBag.Ms = "Isdifadeci sifresi ve parol sefdir gagas";
+                    ViewBag.Ms = "Your Email and Password IsInvalid";
                     return View(user);
 
                 }
                 return RedirectToAction("Index", "Dashboard");
             }
-            ViewBag.Ms = "Melumatlari doldur gagas";
+         //   ViewBag.Ms = "Melumatlari doldur gagas";
             return View(user);
         }
         public async Task<IActionResult> Logout()

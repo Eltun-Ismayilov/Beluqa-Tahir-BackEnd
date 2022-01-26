@@ -37,24 +37,62 @@ namespace BeluqaTahir.WebUI.Controllers
         }
         public IActionResult Index()
         {
+            Request.Cookies.TryGetValue("basket", out string basketJson1);
+            if (basketJson1?.Length > 0)
+            {
+                string[] arr = basketJson1.Split(',');
+                ViewBag.ms = arr.Length / 2;
+            }
+            else
+            {
+                ViewBag.ms = 0;
+            }
             return View();
         }
         public async Task<IActionResult> About(AboutPagedQuery query)
         {
 
             var respons = await db.Send(query);
-
+            Request.Cookies.TryGetValue("basket", out string basketJson1);
+            if (basketJson1?.Length > 0)
+            {
+                string[] arr = basketJson1.Split(',');
+                ViewBag.ms = arr.Length / 2;
+            }
+            else
+            {
+                ViewBag.ms = 0;
+            }
             return View(respons);
         }
         [HttpGet]
         public IActionResult Contact()
         {
+            Request.Cookies.TryGetValue("basket", out string basketJson1);
+            if (basketJson1?.Length > 0)
+            {
+                string[] arr = basketJson1.Split(',');
+                ViewBag.ms = arr.Length / 2;
+            }
+            else
+            {
+                ViewBag.ms = 0;
+            }
             return View();
         }
         [HttpPost]
         public async Task<IActionResult> Contact(ContactCreateCommand query)
         {
-
+            Request.Cookies.TryGetValue("basket", out string basketJson1);
+            if (basketJson1?.Length > 0)
+            {
+                string[] arr = basketJson1.Split(',');
+                ViewBag.ms = arr.Length / 2;
+            }
+            else
+            {
+                ViewBag.ms = 0;
+            }
             var respons = await db.Send(query);
             return Json(respons);
         }
@@ -67,12 +105,31 @@ namespace BeluqaTahir.WebUI.Controllers
                 return RedirectToAction("index", "Home");
 
             }
+            Request.Cookies.TryGetValue("basket", out string basketJson1);
+            if (basketJson1?.Length > 0)
+            {
+                string[] arr = basketJson1.Split(',');
+                ViewBag.message = arr.Length / 2;
+            }
+            else
+            {
+                ViewBag.message = 0;
+            }
             return View();
         }
         [HttpPost]
         public async Task<IActionResult> Register(RegisterFormModel register)
         {
-
+            Request.Cookies.TryGetValue("basket", out string basketJson1);
+            if (basketJson1?.Length > 0)
+            {
+                string[] arr = basketJson1.Split(',');
+                ViewBag.message = arr.Length / 2;
+            }
+            else
+            {
+                ViewBag.message = 0;
+            }
             //Eger giris edibse routda myaccount/sing yazanda o seyfe acilmasin homa tulaasin
             if (User.Identity.IsAuthenticated)
             {
@@ -150,13 +207,31 @@ namespace BeluqaTahir.WebUI.Controllers
                 return RedirectToAction("index", "Home");
 
             }
-
+            Request.Cookies.TryGetValue("basket", out string basketJson1);
+            if (basketJson1?.Length > 0)
+            {
+                string[] arr = basketJson1.Split(',');
+                ViewBag.message = arr.Length / 2;
+            }
+            else
+            {
+                ViewBag.message = 0;
+            }
             return View();
         }
         [HttpPost]
         public async Task<IActionResult> Signin(LoginFormModel user)
         {
-
+            Request.Cookies.TryGetValue("basket", out string basketJson1);
+            if (basketJson1?.Length > 0)
+            {
+                string[] arr = basketJson1.Split(',');
+                ViewBag.message = arr.Length / 2;
+            }
+            else
+            {
+                ViewBag.message = 0;
+            }
 
             if (User.Identity.IsAuthenticated)
             {
