@@ -26,6 +26,7 @@ namespace BeluqaTahir.WebUI.Controllers
 
         }
         [AllowAnonymous]
+
         public async Task<IActionResult> Index(BlogPagedQuery query)
         {
             Request.Cookies.TryGetValue("basket", out string basketJson1);

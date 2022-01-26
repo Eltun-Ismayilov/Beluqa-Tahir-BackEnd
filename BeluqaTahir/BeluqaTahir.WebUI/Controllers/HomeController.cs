@@ -280,7 +280,7 @@ namespace BeluqaTahir.WebUI.Controllers
 
                 if (founderUser.Activates == false)
                 {
-                    ViewBag.ms = "Siz admin terefinden banlanmisiz";
+                    ViewBag.ms = "You have been banned by Admin";
                     return View(user);
                 }
 
@@ -432,5 +432,46 @@ namespace BeluqaTahir.WebUI.Controllers
             return View();
         }
 
+
+
+
+        public async Task<IActionResult> RessetPassword()
+        {
+
+            return View();
+
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> RessetPassword([Bind("Id", "Email")] BeluqaUser users,string NewPassword)
+        {
+
+
+
+           
+            BeluqaUser user = await userManager.FindByEmailAsync(users.Email);
+
+            if (user == null)
+            {
+                return NotFound();
+
+            }
+
+            string token = await userManager.GeneratePasswordResetTokenAsync(user);
+            var identityResult = await userManager.ResetPasswordAsync(user, token, NewPassword);
+            if (!identityResult.Succeeded)
+            {
+                foreach (var item in identityResult.Errors)
+                {
+                    ModelState.AddModelError("", item.Description);
+                }
+                return View(user);
+            }
+
+             return RedirectToAction(nameof(Index));
+
+        }
     }
 }

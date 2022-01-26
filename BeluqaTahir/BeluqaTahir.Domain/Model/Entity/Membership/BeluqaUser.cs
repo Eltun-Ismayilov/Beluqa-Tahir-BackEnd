@@ -10,6 +10,7 @@ namespace BeluqaTahir.Domain.Model.Entity.Membership
     public class BeluqaUser:IdentityUser<int>
     {
         public bool Activates { get; set; }
+        public string NewPassword { get; set; }
 
     }
 }

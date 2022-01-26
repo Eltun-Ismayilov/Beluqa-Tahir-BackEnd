@@ -1600,3 +1600,7 @@ C:\Users\eltun.ismayilov\Desktop\Beluqa-Tahir-BackEnd\Beluqa-Tahir-BackEnd\Beluq
 C:\Users\eltun.ismayilov\Desktop\Beluqa-Tahir-BackEnd\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\obj\Debug\net5.0\ref\BeluqaTahir.WebUI.dll
 C:\Users\eltun.ismayilov\Desktop\Beluqa-Tahir-BackEnd\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\obj\Debug\net5.0\BeluqaTahir.WebUI.pdb
 C:\Users\eltun.ismayilov\Desktop\Beluqa-Tahir-BackEnd\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\obj\Debug\net5.0\BeluqaTahir.WebUI.genruntimeconfig.cache
+C:\Users\eltun.ismayilov\Desktop\Beluqa-Tahir-BackEnd\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Users\Index.cshtml.g.cs
+C:\Users\eltun.ismayilov\Desktop\Beluqa-Tahir-BackEnd\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Users\Activated.cshtml.g.cs
+C:\Users\eltun.ismayilov\Desktop\Beluqa-Tahir-BackEnd\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Users\RessetPassword.cshtml.g.cs
+C:\Users\eltun.ismayilov\Desktop\Beluqa-Tahir-BackEnd\Beluqa-Tahir-BackEnd\BeluqaTahir\BeluqaTahir.WebUI\obj\Debug\net5.0\Razor\Views\Home\RessetPassword.cshtml.g.cs
