@@ -121,7 +121,7 @@
                 <img src="/assets/images/img-01.png" alt="IMG">
             </div>
 
-            <form method="post" id="contact" class="login100-form validate-form">
+            <form method="post" class="login100-form validate-form">
 
                 @if (!string.IsNullOrWhiteSpace(ViewBag.ms))
                 {
@@ -139,21 +139,27 @@
                 <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
                     <input class="input100"
                            asp-for="Email"
-                           data-rule-required="true"
-                           data-msg-required="Email is required"
-                           data-rule-email="true"
-                           data-msg-email="Email must be in mail format"
-                           placeholder="Email enter..">
+                           placeholder="Place Email enter..">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
                         <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                    <input type="password"
+                           class="input100"
+                           asp-for="NewPassword"
+                           placeholder="NewPassword enter..">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
                     </span>
                 </div>
 
 
 
                 <div class="container-login100-form-btn">
-                    <button onclick="myFunction()" type="submit" class="login100-form-btn">
+                    <button type="submit" class="login100-form-btn">
                         Login
                     </button>
                 </div>
@@ -168,119 +174,9 @@
     </div>
 </div>
 
-@section addjs{
-    <script src="~/libs/jquery-validate/jquery.validate.js"></script>
-    <script src="~/libs/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
-    <script src="~/libs/toastr.js/toastr.min.js"></script>
-
-    <script>
-        toastr.options = {
-            "closeButton": false,
-            "debug": false,
-            "newestOnTop": true,
-            "progressBar": true,
-            "positionClass": "toast-bottom-right",
-            "preventDuplicates": true,
-            "onclick": null,
-            "showDuration": "300",
-            "hideDuration": "1000",
-            "timeOut": "7000",
-            "extendedTimeOut": "1000",
-            "showEasing": "swing",
-            "hideEasing": "linear",
-            "showMethod": "fadeIn",
-            "hideMethod": "fadeOut"
-        };
-        // INPUT ERROR CIXARILMASI VALIDATION WITH
-
-        $(document).ready(function () {
-            $('#contact').validate({
-                errorElement: 'span', // Cixan eror label yox span etdih
-                // errorClass: 'is-invalid', // span error cixan zaman class
-                //  validClass: 'is-valid', // span error cixan zaman class input class
-                highlight: function (element, errorClass, validClass) {
-                    $(element).addClass('is-invalid').remove('is-valid')// eger error varsa
-                },
-                unhighlight: function (element, errorClass, validClass) {
-                    $(element).addClass('is-valid').remove('is-invalid') // eger error yoxdusa
-                },
-            });
-        });
-
-
-        $(document).ready(function () {
-        $('#contact').submit(function (e) {
-            e.preventDefault() // post dayandiriq
-            const formData = new FormData(e.currentTarget);
-            $.ajax({
-                url: '@Url.Action("RessetPassword")', // URL HELPERLER
-                type: 'POST',
-                data: formData,
-                contentType: false,
-                processData: false,   //EGER FORM DATA AJAX FORMDATA KIMI GELIRSE FALSE
-                dataType: 'json',
-                beforeSend: function (gelenData) {
-                    console.log("before sending");
-                },
-                success: function (gelenData) {
-                        console.log(gelenData);
-                        if (gelenData.error == false) {
-                            toastr.success(gelenData.message, 'Successfully');
-                            e.currentTarget.reset();
-                            window.location.href = "https://mail.google.com/mail/u/0/#inbox";
-                            $(e.currentTarget).find('.is-invalid').removeClass('is-invalid');
-                            $(e.currentTarget).find('.is-valid').removeClass('is-valid');
-                        } else {
-                            toastr.error(gelenData.message, 'Error');
-                        }
-                },
-                error: function (gelenData) {
-                    console.log(gelenData);
-                    toastr.error('Email is not Database', 'Error');
-                    e.currentTarget.reset();
-
-                },
-            }).always(function () {
-                console.log("after sending");
-            });
-        });
-    });
-    </script>
-
-}
-
-@section addcss{
-
-    <link href="~/libs/toastr.js/toastr.css" rel="stylesheet" />
-
-    <style>
-        .is-invalid {
-            border: 1px solid #dc3545;
-        }
-
-            .is-invalid + span.error {
-                color: red;
-                font-size: 1rem;
-            }
-
-        .is-valid {
-            border: 1px solid teal;
-        }
-    </style>
-}
 
 
 
-
-
-
-@*@section addjs{
-        <script>
-            function myFunction() {
-                alert("Zehmet olmasa gmail Link vasitesile Password deyisin!");
-            }
-        </script>
-    }*@
 
 
 

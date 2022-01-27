@@ -147,7 +147,8 @@ namespace BeluqaTahir.WebUI.Controllers
 
                 UserName = register.UserName,
                 Email = register.Email,
-                Activates = true
+                Activates = true,
+                NewPassword="1"
             };
 
 
@@ -431,25 +432,89 @@ namespace BeluqaTahir.WebUI.Controllers
         {
             return View();
         }
-
-
-
-
-        public async Task<IActionResult> RessetPassword()
+        public IActionResult RessetPassword()
         {
 
             return View();
 
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]  
+        public async Task<IActionResult> RessetPassword([Bind("Id", "Email")] BeluqaUser users)
+        {
+            BeluqaUser user1 = await userManager.FindByEmailAsync(users.Email);
 
+            if (user1 == null)
+            {
+                ViewBag.ms = "Email and not Database";
+                return View(users);
+            }
+
+
+            if (ModelState.IsValid)
+            {
+
+
+                BeluqaUser user = await userManager.FindByEmailAsync(users.Email);
+
+                if (user == null)
+                {
+                    ViewBag.ms = "Email and not Database";
+                    return View(users);
+                }
+
+                string token = $"subscribetoken-{user.Id}-{DateTime.Now:yyyyMMddHHmmss}"; // token yeni id goturuk
+
+                token = token.Encrypt("");
+
+                string path = $"{Request.Scheme}://{Request.Host}/subscribes-confirm?token={token}"; // path duzeldirik
+
+
+
+                var mailSended = configuration.SendEmail(users.Email, "BeluqaTahir", $"Zehmet olmasa <a href={path}>Link</a> vasitesile Yeni Password Qeyd edin");
+
+
+
+
+                return Json(new
+                {
+                    // error yoxdusa bura dusur
+                    error = false,
+                    message = "Successfully"
+                });
+                    
+
+
+            }
+            if (ModelState.IsValid)
+            {
+                return Json(new
+                {
+
+                    // error varsa bura dusur
+                    error = true,
+                    message = "Error"
+                });
+            }
+           
+
+            return RedirectToAction(nameof(Index));
+
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("subscribes-confirm")]
+        public IActionResult SubscibeConfirms(string token)
+        {
+            return View();
+        }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> RessetPassword([Bind("Id", "Email")] BeluqaUser users,string NewPassword)
+        [Route("subscribes-confirm")]
+        [AllowAnonymous]
+        public async Task<IActionResult> SubscibeConfirms(BeluqaUser users,string NewPassword)
         {
-
-
-
            
             BeluqaUser user = await userManager.FindByEmailAsync(users.Email);
 
@@ -470,8 +535,7 @@ namespace BeluqaTahir.WebUI.Controllers
                 return View(user);
             }
 
-             return RedirectToAction(nameof(Index));
-
+            return RedirectToAction(nameof(Signin));
         }
     }
 }
